@@ -28,18 +28,15 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         foreach (GameObject obj in objectArray)
         {
-            if (obj != closestObject)
+            if (closestObject == null)
             {
-                if (closestObject == null)
+                closestObject = obj;
+            }
+            else
+            {
+                if (Vector3.Distance(obj.transform.position, transform.position) < Vector3.Distance(closestObject.transform.position, transform.position))
                 {
                     closestObject = obj;
-                }
-                else
-                {
-                    if (Vector3.Distance(obj.transform.position, transform.position) < Vector3.Distance(closestObject.transform.position, transform.position))
-                    {
-                        closestObject = obj;
-                    }
                 }
             }
         }
@@ -56,6 +53,11 @@ public class ObjectGrabRelease : MonoBehaviour
                     updateHeldObject();
                 }
             }
+            else
+            {
+                throwObject();
+                updateHeldObject();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -69,7 +71,7 @@ public class ObjectGrabRelease : MonoBehaviour
     void throwObject()
     {
         objectInHand.transform.parent = null;
-        objectInHand.GetComponent<Rigidbody>().useGravity = true;
+        objectInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         objectInHand.GetComponent<Rigidbody>().velocity = player.transform.forward * 5;
         objectInHand = null;
     }
@@ -78,7 +80,7 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         objectInHand = closestObject;
         objectInHand.transform.parent = player.transform;
-        objectInHand.GetComponent<Rigidbody>().useGravity = false;
+        objectInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         // change the position relative to the parent
         objectInHand.transform.localPosition = new Vector3(1.25f, 1, 1.25f);
         // change the rotation relative to the parent so that it is pointing up
