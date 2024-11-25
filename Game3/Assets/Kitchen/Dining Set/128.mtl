@@ -1,0 +1,267 @@
+# File produced by AccuTrans 3D
+
+newmtl Bowl
+  Ns 102.6
+  d 1.0
+  illum 2
+  Kd 0.6039 0.1843 0.0039
+  Ka 0.6039 0.1843 0.0039
+  Ks 0.898 0.898 0.898
+
+newmtl Candle
+  Ns 102.6
+  d 1.0
+  illum 2
+  Kd 0.8235 0.8196 0.749
+  Ka 0.8235 0.8196 0.749
+  Ks 0.898 0.898 0.898
+
+newmtl Candle1
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.7294 0.749 0.7255
+  Ka 0.7294 0.749 0.7255
+  Ks 0.898 0.898 0.898
+
+newmtl Candle1_1
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.9804 0.3686 0.1882
+  Ka 0.9804 0.3686 0.1882
+  Ks 0.898 0.898 0.898
+
+newmtl Candle2
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.5216 0.6275 0.5686
+  Ka 0.5216 0.6275 0.5686
+  Ks 0.898 0.898 0.898
+
+newmtl Candle2_1
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.9804 0.3686 0.1882
+  Ka 0.9804 0.3686 0.1882
+  Ks 0.898 0.898 0.898
+
+newmtl Candle_1
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.9804 0.3686 0.1882
+  Ka 0.9804 0.3686 0.1882
+  Ks 0.898 0.898 0.898
+
+newmtl Dining_Tab
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.902 0.8902 0.8235
+  Ka 0.902 0.8902 0.8235
+  Ks 0.898 0.898 0.898
+  map_Kd E:\PARIS~21.jpg
+
+newmtl Dining_Tab_1
+  Ns 39.1
+  d 1.0
+  illum 2
+  Kd 0.302 0.0235 0.0118
+  Ka 0.302 0.0235 0.0118
+  Ks 0.898 0.898 0.898
+  map_Kd E:\PINE6R~1.jpg
+
+newmtl Dinner_Pl1
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.8706 0.8745 0.851
+  Ka 0.8706 0.8745 0.851
+  Ks 0.898 0.898 0.898
+
+newmtl Dinner_Pl2
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.8706 0.8745 0.851
+  Ka 0.8706 0.8745 0.851
+  Ks 0.898 0.898 0.898
+
+newmtl Dinner_Pl3
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.8706 0.8745 0.851
+  Ka 0.8706 0.8745 0.851
+  Ks 0.898 0.898 0.898
+
+newmtl Dinner_Pl4
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.8706 0.8745 0.851
+  Ka 0.8706 0.8745 0.851
+  Ks 0.898 0.898 0.898
+
+newmtl Dinner_Pla
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.8706 0.8745 0.851
+  Ka 0.8706 0.8745 0.851
+  Ks 0.898 0.898 0.898
+
+newmtl Fork
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Fork1
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Fork2
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Fork3
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Fork4
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Glass
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Glass1
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Glass2
+  Ns 26.4
+  d 0.55
+  illum 2
+  Kd 0.7255 0.7333 0.7843
+  Ka 0.7255 0.7333 0.7843
+  Ks 0.898 0.898 0.898
+
+newmtl Table_Kni1
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Table_Kni2
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Table_Kni3
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Table_Kni4
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Table_Knif
+  Ns 35.29
+  d 1.0
+  illum 2
+  Kd 0.7412 0.7176 0.6824
+  Ka 0.7412 0.7176 0.6824
+  Ks 0.898 0.898 0.898
+
+newmtl Tumbler
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Tumbler1
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Wine_Bottl
+  Ns 77.2
+  d 1.0
+  illum 2
+  Kd 0.7804 0.9216 0.9882
+  Ka 0.7804 0.9216 0.9882
+  Ks 0.898 0.898 0.898
+
+newmtl Wine_Bottl_1
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Wine_Glas1
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Wine_Glass
+  Ns 77.2
+  d 0.2
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
