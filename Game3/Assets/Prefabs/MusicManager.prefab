@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6617820688472241516}
   - component: {fileID: 5030020041032085053}
-  - component: {fileID: 7867033063918491619}
+  - component: {fileID: 4429045626938987885}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: MusicManager
@@ -43,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5072919051890116418, guid: 9d7a8ba721986974a88ab49981fbf225, type: 2}
-  m_audioClip: {fileID: 8300000, guid: cad6eaa2ee820ea4f9b59720c35b777b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7867033063918491619
+--- !u!114 &4429045626938987885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4868298978052967292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db2a3a4dd70c3f442b16a9da6699dd1c, type: 3}
+  m_Script: {fileID: 11500000, guid: a7131995df6ab7b41b492d486a16798e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MusicObject: {fileID: 5030020041032085053}
