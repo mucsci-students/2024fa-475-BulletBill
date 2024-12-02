@@ -6321,21 +6321,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 909562819}
   m_SourcePrefab: {fileID: 100100000, guid: 03e2e4480bf3ca241bd6f0fbb37b4f4e, type: 3}
---- !u!4 &468937271
+--- !u!4 &468937271 stripped
 Transform:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03e2e4480bf3ca241bd6f0fbb37b4f4e, type: 3}
   m_PrefabInstance: {fileID: 468937270}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909562818}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.65, y: 0.21918626, z: 1.785}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 529119335}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &475621226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11084,23 +11074,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1678640342}
   m_SourcePrefab: {fileID: 100100000, guid: 095b106e8296742d8a41eb6f442dbf47, type: 3}
---- !u!1 &909562818
+--- !u!1 &909562818 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 03e2e4480bf3ca241bd6f0fbb37b4f4e, type: 3}
   m_PrefabInstance: {fileID: 468937270}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 468937271}
-  - component: {fileID: 909562819}
-  m_Layer: 0
-  m_Name: 'Bookshelf1 (Missing Prefab with guid: 03e2e4480bf3ca241bd6f0fbb37b4f4e)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!65 &909562819
 BoxCollider:
   m_ObjectHideFlags: 0
