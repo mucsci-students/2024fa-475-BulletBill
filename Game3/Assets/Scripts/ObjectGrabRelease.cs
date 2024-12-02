@@ -140,4 +140,17 @@ public class ObjectGrabRelease : MonoBehaviour
         // change the rotation relative to the parent so that it is pointing up
         objectInHand.transform.localRotation = Quaternion.Euler(90, 70, 0);
     }
+
+    void OnGUI()
+    {
+        if (objectInHand != null)
+        {
+            GUI.Box(new Rect(10, 10, 300, 50), "Press Q to throw object");
+            GUI.Box(new Rect(10, 70, 300, 50), "Currently holding: " + objectInHand.name);
+        }
+        else
+        {
+            GUI.Box(new Rect(10, 10, 300, 50), "Press E to pickup an object");
+        }
+    }
 }
