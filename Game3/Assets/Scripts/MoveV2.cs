@@ -11,6 +11,8 @@ public class MoveV2 : MonoBehaviour
     private float horizontalMovement;
     private float verticalMovement;
     private Vector3 moveDirection;
+    public PhysicMaterial normalMat, otherMat;
+    private bool onStairs = false;
     private Rigidbody rb;
     void Start()
     {
@@ -25,7 +27,8 @@ public class MoveV2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        MovePlayer();
+        if (!onStairs)
+            MovePlayer();
     }
 
     void ControlDrag()
@@ -43,5 +46,34 @@ public class MoveV2 : MonoBehaviour
        horizontalMovement = Input.GetAxisRaw("Horizontal");
        verticalMovement = Input.GetAxisRaw("Vertical");
        moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement;
+    }
+
+    void StairsInput()
+    {
+        horizontalMovement = Input.GetAxisRaw("Horizontal");
+        verticalMovement = Input.GetAxisRaw("Vertical");
+        transform.Translate(Vector3.forward * Time.deltaTime * verticalMovement * moveSpeed);
+        transform.Translate(Vector3.right * Time.deltaTime * horizontalMovement * moveSpeed);
+    }
+
+    void OnTriggerStay (Collider other)
+    {
+        if (other.tag == "Stairs")
+        {
+            Debug.Log("In stairs");
+            onStairs = true;
+            gameObject.GetComponent<CapsuleCollider>().material = normalMat;
+            StairsInput();
+        }
+    }
+
+    void OnTriggerExit (Collider other)
+    {
+        if (other.tag == "Stairs")
+        {
+            Debug.Log("Exited Stairs");
+            onStairs = false;
+            gameObject.GetComponent<CapsuleCollider>().material = otherMat;
+        }
     }
 }
