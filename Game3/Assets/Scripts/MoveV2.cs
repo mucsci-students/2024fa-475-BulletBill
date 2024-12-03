@@ -4,48 +4,44 @@ using UnityEngine;
 
 public class MoveV2 : MonoBehaviour
 {
-    [SerializeField] private float horizontalInput;
-    [SerializeField] private float verticalInput;
-    [SerializeField] private float movementSpeed = 1f;
-
-    [SerializeField] private float slopeForce;
-    [SerializeField] private float slopeForceRayLength;
-
-    private CharacterController charController;
     
+    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float moveMult = 1f;
+    [SerializeField] private float rbDrag = 6f;
+    private float horizontalMovement;
+    private float verticalMovement;
+    private Vector3 moveDirection;
+    private Rigidbody rb;
     void Start()
     {
-        charController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
     }
-
     void Update()
     {
-        // Read values from keyboard
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
-        // Move the ojbect
-        transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * movementSpeed);
-        transform.Translate(Vector3.right * Time.deltaTime * horizontalInput * movementSpeed);
-        // transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
-
-        // Checks if on slope
-        if ((verticalInput != 0 || horizontalInput != 0) && OnSlope())
-        {
-            charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
-        }
+        MyInput();
+        ControlDrag();
     }
 
-    private bool OnSlope()
+    void FixedUpdate()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, charController.height / 2 * slopeForceRayLength))
-        {
-            if (hit.normal != Vector3.up)
-            {  
-                return true;
-            } 
-        }
-        return false;
+        MovePlayer();
+    }
+
+    void ControlDrag()
+    {
+        rb.drag = rbDrag;
+    }
+
+    void MovePlayer()
+    {
+        rb.AddForce(moveDirection.normalized * moveSpeed * moveMult, ForceMode.Acceleration);
+    }
+
+    void MyInput()
+    {
+       horizontalMovement = Input.GetAxisRaw("Horizontal");
+       verticalMovement = Input.GetAxisRaw("Vertical");
+       moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement;
     }
 }
