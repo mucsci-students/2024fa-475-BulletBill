@@ -6,12 +6,16 @@ public class ObjectGrabRelease : MonoBehaviour
 {
     public GameObject player;
     public Camera playerCamera;
-    public GameObject[] objectArray = new GameObject[1];
+    public GameObject[] objectArray = new GameObject[13];
     private GameObject objectInHand;
     private GameObject closestObject;
     private float maxGrabDistance = 5.0f;
-    private Vector3[] keyPositions = new Vector3[3];
-    private Vector3[] otherPositions = new Vector3[9];
+    private Vector3[] keyPositions = new Vector3[4];
+    private Vector3[] otherPositions = new Vector3[7];
+    private Vector3[] hiddenPositions = new Vector3[2];
+
+    private GameObject[] JailObjects = new GameObject[2];
+    private GameObject SafeObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +31,8 @@ public class ObjectGrabRelease : MonoBehaviour
         otherPositions[4] = new Vector3(-3.45f, 0.15f, -3.51f);
         otherPositions[5] = new Vector3(2.74f, 0.219f, -2.789f);
         otherPositions[6] = new Vector3(-3.453f, -0.711f, -8.59f);
-        otherPositions[7] = new Vector3(2.308f, -0.695f, -7.993f);
-        otherPositions[8] = new Vector3(3.74f, 0.889f, -1.149f);
+        hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
+        hiddenPositions[1] = new Vector3(3.659f, 0.889f, -1.149f);
         SetUpObjects();
     }
 
@@ -59,6 +63,16 @@ public class ObjectGrabRelease : MonoBehaviour
         return index;
     }
 
+    int randomIndexForHidden()
+    {
+        int index = Random.Range(0, hiddenPositions.Length);
+        if (hiddenPositions[index].x == 0)
+        {
+            return randomIndexForHidden();
+        }
+        return index;
+    }
+
     void SetUpObjects()
     {
         for (int i = 0; i < 3; i++)
@@ -69,12 +83,28 @@ public class ObjectGrabRelease : MonoBehaviour
             // remove the position from the array so that it can't be chosen again
             keyPositions[randomIndex] = new Vector3(0, 0, 0);
         }
-        for (int i = 3; i < objectArray.Length; i++)
+        JailObjects[0] = objectArray[3];
+        for (int i = 4; i < objectArray.Length - 2; i++)
         {
             int randomIndex = randomIndexForOthers();
             objectArray[i].transform.position = otherPositions[randomIndex];
             // remove the position from the array so that it can't be chosen again
             otherPositions[randomIndex] = new Vector3(0, 0, 0);
+        }
+        for (int i = 11; i < objectArray.Length; i++)
+        {
+            int randomIndex = randomIndexForHidden();
+            objectArray[i].transform.position = hiddenPositions[randomIndex];
+            // remove the position from the array so that it can't be chosen again
+            hiddenPositions[randomIndex] = new Vector3(0, 0, 0);
+            if (randomIndex == 0)
+            {
+                SafeObject = objectArray[i];
+            }
+            else
+            {
+                JailObjects[1] = objectArray[i];
+            }
         }
     }
 
@@ -82,15 +112,18 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         foreach (GameObject obj in objectArray)
         {
-            if (closestObject == null)
+            if (obj.tag == "Interactable")
             {
-                closestObject = obj;
-            }
-            else
-            {
-                if (Vector3.Distance(obj.transform.position, transform.position) < Vector3.Distance(closestObject.transform.position, transform.position))
+                if (closestObject == null)
                 {
                     closestObject = obj;
+                }
+                else
+                {
+                    if (Vector3.Distance(obj.transform.position, transform.position) < Vector3.Distance(closestObject.transform.position, transform.position))
+                    {
+                        closestObject = obj;
+                    }
                 }
             }
         }
@@ -152,5 +185,6 @@ public class ObjectGrabRelease : MonoBehaviour
         {
             GUI.Box(new Rect(10, 10, 300, 50), "Press E to pickup an object");
         }
+        
     }
 }
