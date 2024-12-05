@@ -7,9 +7,12 @@ public class ObjectGrabRelease : MonoBehaviour
     public GameObject player;
     public Camera playerCamera;
     public GameObject[] objectArray = new GameObject[13];
+    public Animator basementDoor;
+    public Animator jailDoor;
+    public Animator safeDoor;
     private GameObject objectInHand;
     private GameObject closestObject;
-    private float maxGrabDistance = 5.0f;
+    private float maxGrabDistance = 1.0f;
     private Vector3[] keyPositions = new Vector3[4];
     private Vector3[] otherPositions = new Vector3[7];
     private Vector3[] hiddenPositions = new Vector3[2];
@@ -99,11 +102,11 @@ public class ObjectGrabRelease : MonoBehaviour
             hiddenPositions[randomIndex] = new Vector3(0, 0, 0);
             if (randomIndex == 0)
             {
-                SafeObject = objectArray[i];
+                JailObjects[1] = objectArray[i];
             }
             else
             {
-                JailObjects[1] = objectArray[i];
+                SafeObject = objectArray[i];
             }
         }
     }
@@ -142,6 +145,24 @@ public class ObjectGrabRelease : MonoBehaviour
             }
             else
             {
+                if (objectInHand.name == "JailKey" && Vector3.Distance(objectInHand.transform.position, jailDoor.transform.position) <= maxGrabDistance)
+                {
+                    jailDoor.SetTrigger("openDoor");
+                    JailObjects[0].tag = "Interactable";
+                    print("JailObjects[0]: " + JailObjects[0].name + ", Tag: " + JailObjects[0].tag);
+                    JailObjects[1].tag = "Interactable";
+                    print("JailObjects[1]: " + JailObjects[1].name + ", Tag: " + JailObjects[1].tag);
+                }
+                else if (objectInHand.name == "BasementKey" && Vector3.Distance(objectInHand.transform.position, basementDoor.transform.position) <= maxGrabDistance)
+                {
+                    basementDoor.SetTrigger("openDoor");
+                }
+                else if (objectInHand.name == "SafeKey" && Vector3.Distance(objectInHand.transform.position, safeDoor.transform.position) <= maxGrabDistance)
+                {
+                    safeDoor.SetTrigger("openDoor");
+                    SafeObject.tag = "Interactable";
+                    print("SafeObject: " + SafeObject.name + ", Tag: " + SafeObject.tag);
+                }
                 throwObject();
                 updateHeldObject();
             }
