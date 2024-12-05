@@ -10,7 +10,8 @@ public class ObjectGrabRelease : MonoBehaviour
     public Animator basementDoor;
     public Animator jailDoor;
     public Animator safeDoor;
-    private GameObject objectInHand;
+    public bool crossBowLoaded = false;
+    public GameObject objectInHand = null;
     private GameObject closestObject;
     private float maxGrabDistance = 1.0f;
     private Vector3[] keyPositions = new Vector3[4];
