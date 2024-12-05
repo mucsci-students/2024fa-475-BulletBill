@@ -15073,12 +15073,12 @@ GameObject:
   - component: {fileID: 967252290}
   - component: {fileID: 967252289}
   m_Layer: 0
-  m_Name: Player2
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &967252289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15123,9 +15123,11 @@ MonoBehaviour:
   - {fileID: 1486344205}
   - {fileID: 1486643023}
   - {fileID: 1238971619}
-  basementDoor: {fileID: 0}
-  jailDoor: {fileID: 0}
-  safeDoor: {fileID: 0}
+  basementDoor: {fileID: 260550774}
+  jailDoor: {fileID: 1330820492}
+  safeDoor: {fileID: 1607671976}
+  crossBowLoaded: 0
+  objectInHand: {fileID: 0}
 --- !u!54 &967252292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24709,6 +24711,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9902532, y: 4.0592647, z: 0.98359907}
   m_Center: {x: 0.008534416, y: 1.5296311, z: -0.008200481}
+--- !u!95 &1607671976 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 972973626607986196, guid: f9850d35cf02240eaa078e90206469b7, type: 3}
+  m_PrefabInstance: {fileID: 596413162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1615360216
 GameObject:
   m_ObjectHideFlags: 0
@@ -25496,12 +25503,12 @@ GameObject:
   - component: {fileID: 1664053414}
   - component: {fileID: 1664053416}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1664053410
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25663,7 +25670,9 @@ MonoBehaviour:
   - {fileID: 1238971619}
   basementDoor: {fileID: 260550774}
   jailDoor: {fileID: 1330820492}
-  safeDoor: {fileID: 2068431515}
+  safeDoor: {fileID: 0}
+  crossBowLoaded: 0
+  objectInHand: {fileID: 0}
 --- !u!4 &1666559172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03ccbc453c7f9c44fa869120b7f1023d, type: 3}
