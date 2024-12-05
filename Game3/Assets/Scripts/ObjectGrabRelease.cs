@@ -19,6 +19,8 @@ public class ObjectGrabRelease : MonoBehaviour
 
     private GameObject[] JailObjects = new GameObject[2];
     private GameObject SafeObject;
+
+    private GUIStyle buttonStyle;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,26 @@ public class ObjectGrabRelease : MonoBehaviour
         hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
         hiddenPositions[1] = new Vector3(3.659f, 0.889f, -1.149f);
         SetUpObjects();
+
+        // Initialize the style
+        buttonStyle = new GUIStyle();
+
+        // Set the font style to bold
+        buttonStyle.fontStyle = FontStyle.Bold;
+
+        // Set the text color to white
+        buttonStyle.normal.textColor = Color.white;
+
+        // Create a black texture and assign it as the button's background
+        Texture2D blackTexture = new Texture2D(1, 1);
+        blackTexture.SetPixel(0, 0, Color.black);
+        buttonStyle.normal.background = blackTexture;
+
+        // Adjust font size if needed
+        buttonStyle.fontSize = 75;
+
+        // Adjust padding or other properties as needed
+        buttonStyle.padding = new RectOffset(10, 10, 10, 10);
     }
 
     // Update is called once per frame
@@ -199,12 +221,12 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         if (objectInHand != null)
         {
-            GUI.Box(new Rect(10, 10, 300, 50), "Press Q to throw object");
-            GUI.Box(new Rect(10, 70, 300, 50), "Currently holding: " + objectInHand.name);
+            GUI.Box(new Rect(10, 10, 1250, 100), "Press Q to throw object", buttonStyle);
+            GUI.Box(new Rect(10, 110, 1250, 100), "Currently holding: " + objectInHand.name, buttonStyle);
         }
         else
         {
-            GUI.Box(new Rect(10, 10, 300, 50), "Press E to pickup an object");
+            GUI.Box(new Rect(10, 10, 1250, 100), "Press E to pickup an object", buttonStyle);
         }
         
     }
