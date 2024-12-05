@@ -6,12 +6,22 @@ public class ObjectGrabRelease : MonoBehaviour
 {
     public GameObject player;
     public Camera playerCamera;
-    public GameObject[] objectArray = new GameObject[1];
-    private GameObject objectInHand;
+    public GameObject[] objectArray = new GameObject[13];
+    public Animator basementDoor;
+    public Animator jailDoor;
+    public Animator safeDoor;
+    public bool crossBowLoaded = false;
+    public GameObject objectInHand = null;
     private GameObject closestObject;
-    private float maxGrabDistance = 5.0f;
-    private Vector3[] keyPositions = new Vector3[3];
-    private Vector3[] otherPositions = new Vector3[9];
+    private float maxGrabDistance = 1.0f;
+    private Vector3[] keyPositions = new Vector3[4];
+    private Vector3[] otherPositions = new Vector3[7];
+    private Vector3[] hiddenPositions = new Vector3[2];
+
+    private GameObject[] JailObjects = new GameObject[2];
+    private GameObject SafeObject;
+
+    private GUIStyle buttonStyle;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +37,29 @@ public class ObjectGrabRelease : MonoBehaviour
         otherPositions[4] = new Vector3(-3.45f, 0.15f, -3.51f);
         otherPositions[5] = new Vector3(2.74f, 0.219f, -2.789f);
         otherPositions[6] = new Vector3(-3.453f, -0.711f, -8.59f);
-        otherPositions[7] = new Vector3(2.308f, -0.695f, -7.993f);
-        otherPositions[8] = new Vector3(3.74f, 0.889f, -1.149f);
+        hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
+        hiddenPositions[1] = new Vector3(3.659f, 0.889f, -1.149f);
         SetUpObjects();
+
+        // Initialize the style
+        buttonStyle = new GUIStyle();
+
+        // Set the font style to bold
+        buttonStyle.fontStyle = FontStyle.Bold;
+
+        // Set the text color to white
+        buttonStyle.normal.textColor = Color.white;
+
+        // Create a black texture and assign it as the button's background
+        Texture2D blackTexture = new Texture2D(1, 1);
+        blackTexture.SetPixel(0, 0, Color.black);
+        buttonStyle.normal.background = blackTexture;
+
+        // Adjust font size if needed
+        buttonStyle.fontSize = 75;
+
+        // Adjust padding or other properties as needed
+        buttonStyle.padding = new RectOffset(10, 10, 10, 10);
     }
 
     // Update is called once per frame
@@ -59,6 +89,16 @@ public class ObjectGrabRelease : MonoBehaviour
         return index;
     }
 
+    int randomIndexForHidden()
+    {
+        int index = Random.Range(0, hiddenPositions.Length);
+        if (hiddenPositions[index].x == 0)
+        {
+            return randomIndexForHidden();
+        }
+        return index;
+    }
+
     void SetUpObjects()
     {
         for (int i = 0; i < 3; i++)
@@ -69,12 +109,28 @@ public class ObjectGrabRelease : MonoBehaviour
             // remove the position from the array so that it can't be chosen again
             keyPositions[randomIndex] = new Vector3(0, 0, 0);
         }
-        for (int i = 3; i < objectArray.Length; i++)
+        JailObjects[0] = objectArray[3];
+        for (int i = 4; i < objectArray.Length - 2; i++)
         {
             int randomIndex = randomIndexForOthers();
             objectArray[i].transform.position = otherPositions[randomIndex];
             // remove the position from the array so that it can't be chosen again
             otherPositions[randomIndex] = new Vector3(0, 0, 0);
+        }
+        for (int i = 11; i < objectArray.Length; i++)
+        {
+            int randomIndex = randomIndexForHidden();
+            objectArray[i].transform.position = hiddenPositions[randomIndex];
+            // remove the position from the array so that it can't be chosen again
+            hiddenPositions[randomIndex] = new Vector3(0, 0, 0);
+            if (randomIndex == 0)
+            {
+                JailObjects[1] = objectArray[i];
+            }
+            else
+            {
+                SafeObject = objectArray[i];
+            }
         }
     }
 
@@ -82,15 +138,18 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         foreach (GameObject obj in objectArray)
         {
-            if (closestObject == null)
+            if (obj.tag == "Interactable")
             {
-                closestObject = obj;
-            }
-            else
-            {
-                if (Vector3.Distance(obj.transform.position, transform.position) < Vector3.Distance(closestObject.transform.position, transform.position))
+                if (closestObject == null)
                 {
                     closestObject = obj;
+                }
+                else
+                {
+                    if (Vector3.Distance(obj.transform.position, transform.position) < Vector3.Distance(closestObject.transform.position, transform.position))
+                    {
+                        closestObject = obj;
+                    }
                 }
             }
         }
@@ -109,6 +168,24 @@ public class ObjectGrabRelease : MonoBehaviour
             }
             else
             {
+                if (objectInHand.name == "JailKey" && Vector3.Distance(objectInHand.transform.position, jailDoor.transform.position) <= maxGrabDistance)
+                {
+                    jailDoor.SetTrigger("openDoor");
+                    JailObjects[0].tag = "Interactable";
+                    print("JailObjects[0]: " + JailObjects[0].name + ", Tag: " + JailObjects[0].tag);
+                    JailObjects[1].tag = "Interactable";
+                    print("JailObjects[1]: " + JailObjects[1].name + ", Tag: " + JailObjects[1].tag);
+                }
+                else if (objectInHand.name == "BasementKey" && Vector3.Distance(objectInHand.transform.position, basementDoor.transform.position) <= maxGrabDistance)
+                {
+                    basementDoor.SetTrigger("openDoor");
+                }
+                else if (objectInHand.name == "SafeKey" && Vector3.Distance(objectInHand.transform.position, safeDoor.transform.position) <= maxGrabDistance)
+                {
+                    safeDoor.SetTrigger("openDoor");
+                    SafeObject.tag = "Interactable";
+                    print("SafeObject: " + SafeObject.name + ", Tag: " + SafeObject.tag);
+                }
                 throwObject();
                 updateHeldObject();
             }
@@ -145,12 +222,13 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         if (objectInHand != null)
         {
-            GUI.Box(new Rect(10, 10, 300, 50), "Press Q to throw object");
-            GUI.Box(new Rect(10, 70, 300, 50), "Currently holding: " + objectInHand.name);
+            GUI.Box(new Rect(10, 10, 1250, 100), "Press Q to throw object", buttonStyle);
+            GUI.Box(new Rect(10, 110, 1250, 100), "Currently holding: " + objectInHand.name, buttonStyle);
         }
         else
         {
-            GUI.Box(new Rect(10, 10, 300, 50), "Press E to pickup an object");
+            GUI.Box(new Rect(10, 10, 1250, 100), "Press E to pickup an object", buttonStyle);
         }
+        
     }
 }

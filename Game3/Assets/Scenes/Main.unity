@@ -1670,7 +1670,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95249188}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &95249191
 Camera:
   m_ObjectHideFlags: 0
@@ -1678,7 +1678,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95249188}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -3919,6 +3919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasementKey
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32cfeb5485053ea4e8cd0450dcd16a7d, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4322,15 +4326,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0b5c08368b7804a45848b408da385711, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b5c08368b7804a45848b408da385711, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b5c08368b7804a45848b408da385711, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b5c08368b7804a45848b408da385711, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4375,6 +4379,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0b5c08368b7804a45848b408da385711, type: 3}
       propertyPath: m_Name
       value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0b5c08368b7804a45848b408da385711, type: 3}
+      propertyPath: m_TagString
+      value: NonInteractable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5654,7 +5662,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291829851}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &291829854
 Camera:
   m_ObjectHideFlags: 0
@@ -5662,7 +5670,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291829851}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -5833,7 +5841,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304410147}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &304410150
 Camera:
   m_ObjectHideFlags: 0
@@ -5841,7 +5849,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304410147}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -8064,6 +8072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crowbar
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b4ebc0b7c93a26f4498bbd110db28503, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8780,7 +8792,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535241979}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &535241982
 Camera:
   m_ObjectHideFlags: 0
@@ -8788,7 +8800,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535241979}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -10259,6 +10271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Taser
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcedf65a00a0cb54585060721c9594bd, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11014,6 +11030,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3570900bf70876d43940df97dd280dea, type: 3}
       propertyPath: m_Name
       value: Screwdriver
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3570900bf70876d43940df97dd280dea, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11872,7 +11892,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775475336}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &775475339
 Camera:
   m_ObjectHideFlags: 0
@@ -11880,7 +11900,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775475336}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -12343,19 +12363,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.025
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.025
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.025
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.74
+      value: 3.659
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12396,6 +12416,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
       propertyPath: m_Name
       value: Pliers_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 304ccdf1bf6613f47b37a6610141d6dc, type: 3}
+      propertyPath: m_TagString
+      value: NonInteractable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15054,7 +15078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &967252289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15099,6 +15123,9 @@ MonoBehaviour:
   - {fileID: 1486344205}
   - {fileID: 1486643023}
   - {fileID: 1238971619}
+  basementDoor: {fileID: 0}
+  jailDoor: {fileID: 0}
+  safeDoor: {fileID: 0}
 --- !u!54 &967252292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15758,6 +15785,59 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 524976043}
   m_SourcePrefab: {fileID: 100100000, guid: ec528ebcec49801448f0e686818cdeff, type: 3}
+--- !u!1 &1008081829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+  m_PrefabInstance: {fileID: 1829524430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1008081830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008081829}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9753472, y: 1.3691396, z: 0.09241505}
+  m_Center: {x: 0.015002519, y: -0.004761697, z: 0.00062907505}
+--- !u!54 &1008081831
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008081829}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1017042954
 GameObject:
   m_ObjectHideFlags: 0
@@ -16483,7 +16563,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051118929}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1051118932
 Camera:
   m_ObjectHideFlags: 0
@@ -16491,7 +16571,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051118929}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -17056,7 +17136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1112723717
 Transform:
   m_ObjectHideFlags: 0
@@ -18846,7 +18926,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240032288}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1240032291
 Camera:
   m_ObjectHideFlags: 0
@@ -18854,7 +18934,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240032288}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -19408,7 +19488,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291804642}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1291804645
 Camera:
   m_ObjectHideFlags: 0
@@ -19416,7 +19496,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291804642}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -22512,6 +22592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JailKey
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b4f1300549f68f4c9699a81f16573fb, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22749,7 +22833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1487205289
 Transform:
   m_ObjectHideFlags: 0
@@ -22920,7 +23004,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490580154}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1490580157
 Camera:
   m_ObjectHideFlags: 0
@@ -22928,7 +23012,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490580154}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -23520,7 +23604,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525649052}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1525649055
 Camera:
   m_ObjectHideFlags: 0
@@ -23528,7 +23612,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525649052}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -23864,7 +23948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1567973326
 Transform:
   m_ObjectHideFlags: 0
@@ -25417,7 +25501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &1664053410
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25500,7 +25584,7 @@ Transform:
   m_GameObject: {fileID: 1664053409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.05, y: 1.56, z: -9.95}
+  m_LocalPosition: {x: -2.05, y: 1.56, z: -0.74}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25567,6 +25651,7 @@ MonoBehaviour:
   - {fileID: 2134719701}
   - {fileID: 1828301185}
   - {fileID: 1873599665}
+  - {fileID: 1008081829}
   - {fileID: 735661146}
   - {fileID: 616353814}
   - {fileID: 1085182377}
@@ -25576,6 +25661,9 @@ MonoBehaviour:
   - {fileID: 1486344205}
   - {fileID: 1486643023}
   - {fileID: 1238971619}
+  basementDoor: {fileID: 260550774}
+  jailDoor: {fileID: 1330820492}
+  safeDoor: {fileID: 2068431515}
 --- !u!4 &1666559172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03ccbc453c7f9c44fa869120b7f1023d, type: 3}
@@ -27199,6 +27287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SafeKey
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429dcef1535426347a8ec60d96d63885, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28205,6 +28297,85 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &1829524430
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.097
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.712
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.662
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_Name
+      value: EscapeKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      propertyPath: m_TagString
+      value: NonInteractable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008081831}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008081830}
+  m_SourcePrefab: {fileID: 100100000, guid: 0e74e77f472b64d4db7734acc6ce1403, type: 3}
 --- !u!1001 &1847164289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28444,6 +28615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crossbow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41da6c7dd4a86b64e88c801ae29fa7d3, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28647,6 +28822,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eac2a0e78353c3947a5a751ae1f21ed4, type: 3}
       propertyPath: m_Name
       value: 011_syringe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eac2a0e78353c3947a5a751ae1f21ed4, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30290,6 +30469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c8bb7b9bdfcec3b44a9e368f89bd9047, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30918,6 +31101,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63404bad47bb11849817ed17f33a3fb0, type: 3}
       propertyPath: m_Name
       value: FirstAidKit_Hard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63404bad47bb11849817ed17f33a3fb0, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31968,7 +32155,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108901057}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2108901060
 Camera:
   m_ObjectHideFlags: 0
@@ -31976,7 +32163,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108901057}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -32331,7 +32518,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129165779}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2129165782
 Camera:
   m_ObjectHideFlags: 0
@@ -32339,7 +32526,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129165779}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -32918,6 +33105,7 @@ SceneRoots:
   - {fileID: 1473183946}
   - {fileID: 1756331796}
   - {fileID: 207742715}
+  - {fileID: 1829524430}
   - {fileID: 1858414805}
   - {fileID: 475621226}
   - {fileID: 2046294079}
