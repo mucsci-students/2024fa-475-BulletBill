@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5717519212261955243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b1dee712cb224c498f121f3e6c2ce30, type: 3}
+  m_Script: {fileID: 11500000, guid: 28de8415b1669014d94971076ca5792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundFXObject: {fileID: 3736277745192012821, guid: 7a743bd13fb3f3a4081c9d6e3274fa2f, type: 3}
+  soundFXObject: {fileID: 0}

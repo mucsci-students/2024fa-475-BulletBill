@@ -18,13 +18,17 @@ public class redToGreenLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (script.objectInHand.name == "Lever")
+        if (script.objectInHand != null)
         {
-            hiddenLever.SetActive(true);
-            basementRedLight.SetActive(false);
-            exitRedLight.SetActive(false);
-            basementGreenLight.SetActive(true);
-            exitGreenLight.SetActive(true);
+            if (script.objectInHand.name == "Lever")
+            {
+                hiddenLever.SetActive(true);
+                basementRedLight.SetActive(false);
+                exitRedLight.SetActive(false);
+                basementGreenLight.SetActive(true);
+                exitGreenLight.SetActive(true);
+            }
         }
+        
     }
 }
