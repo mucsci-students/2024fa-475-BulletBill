@@ -11,7 +11,7 @@ public class ShootArrow : MonoBehaviour
     public GameObject arrow;
     void Start()
     {
-        script.crossBowLoaded = true;
+        
     }
 
     // Update is called once per frame

@@ -188,7 +188,7 @@ public class ObjectGrabRelease : MonoBehaviour
                     SafeObject.tag = "Interactable";
                     print("SafeObject: " + SafeObject.name + ", Tag: " + SafeObject.tag);
                 }
-                else if (objectInHand.name == "Crossbow" && Vector3.Distance(arrow.transform.position, transform.position) <= maxGrabDistance)
+                else if (objectInHand.name == "Crossbow" && Vector3.Distance(arrow.transform.position, transform.position) <= maxGrabDistance && !crossBowLoaded)
                 {
                     print("Loading arrow");
                     crossBowLoaded = true;
