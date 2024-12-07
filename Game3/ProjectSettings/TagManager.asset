@@ -8,6 +8,7 @@ TagManager:
   - NonInteractable
   - Interactable
   - Enemy
+  - SFXManager
   layers:
   - Default
   - TransparentFX
