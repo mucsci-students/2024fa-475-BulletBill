@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stairs
+  - NonInteractable
+  - Interactable
+  - Enemy
+  - SFXManager
   layers:
   - Default
   - TransparentFX
@@ -11,10 +16,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Upstairs
+  - Middle Floor
+  - Basement
+  - Player
   - 
   - 
   - 
