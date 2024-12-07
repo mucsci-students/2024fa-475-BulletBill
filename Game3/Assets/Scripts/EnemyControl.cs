@@ -6,9 +6,9 @@ using UnityEngine.AI;
 
 public class EnemyControl : MonoBehaviour
 {
-    public int radius;
-    public int unfollowTime;
-    public int waitTime;
+    private int radius;
+    private int unfollowTime;
+    private int waitTime;
     [SerializeField] public NavMeshAgent agent;
     [SerializeField] public Transform target;
 
@@ -18,5 +18,14 @@ public class EnemyControl : MonoBehaviour
         {
             agent.SetDestination(target.position);
         }
+    }
+
+    void OnTriggerEnter()
+    {
+        Debug.Log("Player Hit!");
+    }
+    void OnTriggerStay()
+    {
+
     }
 }
