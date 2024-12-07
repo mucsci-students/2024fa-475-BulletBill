@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class HitByArrow : MonoBehaviour
 {
-    void OnCollisionEnter (Collision other)
+    void OnTriggerEnter (Collider other)
     {
         if (other.gameObject.name == "Arrow")
         {
             gameObject.SetActive(false);
         }
     }
+    // void OnCollisionEnter (Collision other)
+    // {
+    //     if (other.gameObject.name == "Arrow")
+    //     {
+    //         gameObject.SetActive(false);
+    //     }
+    // }
 }
