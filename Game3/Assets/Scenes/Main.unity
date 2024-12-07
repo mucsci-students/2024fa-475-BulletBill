@@ -15514,6 +15514,7 @@ MonoBehaviour:
   safeDoor: {fileID: 1607671976}
   crossBowLoaded: 0
   objectInHand: {fileID: 0}
+  arrow: {fileID: 1649121911}
 --- !u!54 &967252292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23290,7 +23291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1487205289
 Transform:
   m_ObjectHideFlags: 0
@@ -24458,7 +24459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1567973326
 Transform:
   m_ObjectHideFlags: 0
@@ -26197,6 +26198,7 @@ MonoBehaviour:
   safeDoor: {fileID: 0}
   crossBowLoaded: 0
   objectInHand: {fileID: 0}
+  arrow: {fileID: 0}
 --- !u!4 &1666559172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03ccbc453c7f9c44fa869120b7f1023d, type: 3}

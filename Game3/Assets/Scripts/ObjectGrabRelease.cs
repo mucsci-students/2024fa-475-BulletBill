@@ -13,6 +13,8 @@ public class ObjectGrabRelease : MonoBehaviour
     public bool crossBowLoaded = false;
     public GameObject objectInHand = null;
     private GameObject closestObject;
+
+    public GameObject arrow;
     private float maxGrabDistance = 1.0f;
     private Vector3[] keyPositions = new Vector3[4];
     private Vector3[] otherPositions = new Vector3[7];
@@ -186,6 +188,12 @@ public class ObjectGrabRelease : MonoBehaviour
                     SafeObject.tag = "Interactable";
                     print("SafeObject: " + SafeObject.name + ", Tag: " + SafeObject.tag);
                 }
+                else if (objectInHand.name == "Crossbow" && Vector3.Distance(arrow.transform.position, transform.position) <= maxGrabDistance)
+                {
+                    print("Loading arrow");
+                    crossBowLoaded = true;
+                    LoadArrow();
+                }
                 throwObject();
                 updateHeldObject();
             }
@@ -201,6 +209,7 @@ public class ObjectGrabRelease : MonoBehaviour
 
     void throwObject()
     {
+        objectInHand.GetComponent<BoxCollider>().enabled = true;
         objectInHand.transform.parent = null;
         objectInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         objectInHand.GetComponent<Rigidbody>().velocity = player.transform.forward * 5;
@@ -215,7 +224,24 @@ public class ObjectGrabRelease : MonoBehaviour
         // change the position relative to the parent
         objectInHand.transform.localPosition = new Vector3(1.25f, 1, 1.25f);
         // change the rotation relative to the parent so that it is pointing up
-        objectInHand.transform.localRotation = Quaternion.Euler(90, 70, 0);
+        if (objectInHand.name != "Crossbow")
+        {
+            objectInHand.transform.localRotation = Quaternion.Euler(90, 70, 0);
+        }
+        else
+        {
+            objectInHand.transform.localRotation = Quaternion.Euler(0, 170, 0);
+        }
+        objectInHand.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    void LoadArrow()
+    {
+        arrow.transform.parent = objectInHand.transform;
+        arrow.GetComponent<BoxCollider>().enabled = false;
+        arrow.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        arrow.transform.localPosition = new Vector3(0, 0, -.5f);
+        arrow.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     void OnGUI()
