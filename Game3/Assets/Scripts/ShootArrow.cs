@@ -5,13 +5,13 @@ using UnityEngine;
 public class ShootArrow : MonoBehaviour
 {
     [SerializeField] public AudioClip arrowSound;
-    [SerializeField] private float arrowSpeed = 5f;
+    [SerializeField] private float arrowSpeed = 7.5f;
     public Camera fpsCam;
     public ObjectGrabRelease script;
     public GameObject arrow;
     void Start()
     {
-        script.crossBowLoaded = true;
+
     }
 
     // Update is called once per frame
@@ -29,8 +29,11 @@ public class ShootArrow : MonoBehaviour
     void Shoot ()
     {
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.None;
+        arrow.GetComponent<BoxCollider>().enabled = true;
+        arrow.transform.parent = null;
         //arrow.transform.rotation = Quaternion.LookRotation(rb.velocity);
         rb.velocity = fpsCam.transform.forward * arrowSpeed;
-
+        script.crossBowLoaded = false;
     }
 }
