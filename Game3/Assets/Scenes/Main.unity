@@ -13894,7 +13894,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 2
   m_Height: 2.5705118
   m_Direction: 1
   m_Center: {x: 0.007913907, y: 1.4666015, z: 0}
@@ -13910,9 +13910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fc04496aaef2b49973c33ca0c4859b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
-  unfollowTime: 0
-  waitTime: 0
   agent: {fileID: 846116591}
   target: {fileID: 967252296}
 --- !u!1 &859051433 stripped
