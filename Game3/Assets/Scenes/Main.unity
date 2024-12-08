@@ -15998,11 +15998,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taserSound: {fileID: 8300000, guid: 494acf3c49315424fb8e04c9643b9596, type: 3}
+  coolDownTime: 30
   fpsCam: {fileID: 1383194506}
   script: {fileID: 967252290}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1001 &967370200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22893,7 +22891,7 @@ Transform:
   m_GameObject: {fileID: 1446441317}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2, y: 0.295, z: 0.645}
+  m_LocalPosition: {x: 2, y: 0.295, z: 0.65}
   m_LocalScale: {x: 2.5, y: 1.025, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22940,7 +22938,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82c6b2f95703a5d4abe1d2ba03f4cf13, type: 2}
+  - {fileID: 2100000, guid: 47e70f4d1af2d2045a9e09547572f23a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
