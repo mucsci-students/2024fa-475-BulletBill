@@ -16919,11 +16919,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   script: {fileID: 967252290}
-  hiddenLever: {fileID: 0}
+  hiddenLever: {fileID: 1595182911}
   basementRedLight: {fileID: 836759831}
   basementGreenLight: {fileID: 331276536}
   exitRedLight: {fileID: 215077521}
   exitGreenLight: {fileID: 424932871}
+  box: {fileID: 341722226}
 --- !u!114 &967252298
 MonoBehaviour:
   m_ObjectHideFlags: 0
