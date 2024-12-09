@@ -6,9 +6,6 @@ using UnityEngine.AI;
 
 public class EnemyControl : MonoBehaviour
 {
-    private int radius;
-    private int unfollowTime;
-    private int waitTime;
     public Animator anim;
     public bool isWalk;
     [SerializeField] public NavMeshAgent agent;
@@ -26,14 +23,5 @@ public class EnemyControl : MonoBehaviour
         {
             agent.SetDestination(target.position);
         }
-    }
-
-    void OnTriggerEnter()
-    {
-        Debug.Log("Player Hit!");
-    }
-    void OnTriggerStay()
-    {
-
     }
 }

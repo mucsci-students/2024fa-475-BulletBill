@@ -29,11 +29,6 @@ public class HitByArrow : MonoBehaviour
         hitStyle.padding = new RectOffset(10, 10, 10, 10);
     }
 
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter (Collider other)
     {
         if (other.gameObject.name == "Arrow")
