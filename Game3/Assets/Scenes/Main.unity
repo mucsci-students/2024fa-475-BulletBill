@@ -16936,6 +16936,7 @@ MonoBehaviour:
   safeDoor: {fileID: 1607671976}
   crossBowLoaded: 0
   objectInHand: {fileID: 0}
+  escapeDoor: {fileID: 2119429873}
   arrow: {fileID: 1649121911}
 --- !u!54 &967252292
 Rigidbody:
@@ -35791,6 +35792,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118634440}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2119429873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 90ea4d82e5c36424da5df7077f8aa3ee, type: 3}
+  m_PrefabInstance: {fileID: 824724068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2123818959
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class ObjectGrabRelease : MonoBehaviour
     public Animator safeDoor;
     public bool crossBowLoaded = false;
     public GameObject objectInHand = null;
+    public GameObject escapeDoor;
     private GameObject closestObject;
 
     public GameObject arrow;
@@ -256,5 +257,13 @@ public class ObjectGrabRelease : MonoBehaviour
             GUI.Box(new Rect(10, 10, 1250, 100), "Press E to pickup an object", buttonStyle);
         }
         
+        if (Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= 1.0f)
+        {
+            GUI.Box(new Rect(10, 210, 1250, 100), "Items need to escape (In Order):", buttonStyle);
+            GUI.Box(new Rect(10, 310, 1250, 100), "1. Electricity Turned On (Lever)", buttonStyle);
+            GUI.Box(new Rect(10, 410, 1250, 100), "2. Screwdriver", buttonStyle);
+            GUI.Box(new Rect(10, 510, 1250, 100), "3. Crowbar", buttonStyle);
+            GUI.Box(new Rect(10, 610, 1250, 100), "4. Escape Key", buttonStyle);
+        }
     }
 }
