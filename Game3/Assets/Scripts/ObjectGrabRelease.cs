@@ -14,8 +14,9 @@ public class ObjectGrabRelease : MonoBehaviour
     public GameObject objectInHand = null;
     public GameObject escapeDoor;
     private GameObject closestObject;
-
     public GameObject arrow;
+    public Camera[] cameraArray = new Camera[12];
+    private Camera closestCamera;
     private float maxGrabDistance = 1.0f;
     private Vector3[] keyPositions = new Vector3[4];
     private Vector3[] otherPositions = new Vector3[7];
@@ -69,6 +70,7 @@ public class ObjectGrabRelease : MonoBehaviour
     void Update()
     {
         updateClosestItem();
+        updateClosestCamera();
         checkGrabInput();
     }
 
@@ -158,6 +160,24 @@ public class ObjectGrabRelease : MonoBehaviour
         }
     }
 
+    void updateClosestCamera()
+    {
+        foreach (Camera cam in cameraArray)
+        {
+            if (closestCamera == null)
+            {
+                closestCamera = cam;
+            }
+            else
+            {
+                if (Vector3.Distance(cam.transform.position, transform.position) < Vector3.Distance(closestCamera.transform.position, transform.position))
+                {
+                    closestCamera = cam;
+                }
+            }
+        }
+    }
+
     void checkGrabInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -204,6 +224,16 @@ public class ObjectGrabRelease : MonoBehaviour
             if (objectInHand != null)
             {
                 throwObject();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (closestCamera != null && Vector3.Distance(closestCamera.transform.position, transform.position) <= maxGrabDistance)
+            {
+                playerCamera.enabled = false;
+                closestCamera.enabled = true;
+                // set the player as inactive
+                player.SetActive(false);
             }
         }
     }
@@ -264,6 +294,11 @@ public class ObjectGrabRelease : MonoBehaviour
             GUI.Box(new Rect(10, 410, 1250, 100), "2. Screwdriver", buttonStyle);
             GUI.Box(new Rect(10, 510, 1250, 100), "3. Crowbar", buttonStyle);
             GUI.Box(new Rect(10, 610, 1250, 100), "4. Escape Key", buttonStyle);
+        }
+
+        if (Vector3.Distance(player.transform.position, closestCamera.transform.position) <= maxGrabDistance && closestCamera != null)
+        {
+            GUI.Box(new Rect(10, 710, 1250, 100), "Press R to hide", buttonStyle);
         }
     }
 }
