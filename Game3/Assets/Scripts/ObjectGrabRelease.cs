@@ -29,18 +29,18 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         objectInHand = null;
         closestObject = null;
-        keyPositions[0] = new Vector3(1.279f, 1.076f, 0.013f);
+        keyPositions[0] = new Vector3(7.508f, 0.986f, 0.8f);
         keyPositions[1] = new Vector3(-.844f, 0.2172f, 1.317f);
         keyPositions[2] = new Vector3(-2.65f, 0.215f, 0.382f);
-        otherPositions[0] = new Vector3(-2.409f, 1, -3.489f);
-        otherPositions[1] = new Vector3(-1.393f, 0.972f, 2.812f);
-        otherPositions[2] = new Vector3(2.585f, 0.887f, 2.096f);
+        otherPositions[0] = new Vector3(4.719f, 1.065f, -1.963f);
+        otherPositions[1] = new Vector3(5.351f, 0.876f, 1.93f);
+        otherPositions[2] = new Vector3(11.005f, 1, -2.948f);
         otherPositions[3] = new Vector3(-3.537f, 0.159f, 3.322f);
         otherPositions[4] = new Vector3(-3.45f, 0.15f, -3.51f);
         otherPositions[5] = new Vector3(2.74f, 0.219f, -2.789f);
         otherPositions[6] = new Vector3(-3.453f, -0.711f, -8.59f);
         hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
-        hiddenPositions[1] = new Vector3(3.659f, 0.889f, -1.149f);
+        hiddenPositions[1] = new Vector3(8.788f, 0.89f, 3.016f);
         SetUpObjects();
 
         // Initialize the style
