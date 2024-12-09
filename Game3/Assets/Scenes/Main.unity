@@ -12628,6 +12628,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1383194506}
   script: {fileID: 967252290}
   arrow: {fileID: 1649121911}
+  isHit: 0
 --- !u!1 &738653990
 GameObject:
   m_ObjectHideFlags: 0
@@ -14566,6 +14567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7101b51fc82347d4995f474745371527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script: {fileID: 735661149}
 --- !u!4 &846116603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 235ea8a68caaa324cae6af2102f0aba2, type: 3}
@@ -15139,7 +15141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f5028ff6162d1349addbfb3eb0f72e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15588,7 +15590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ba436b99e17b6e4fa83ff923eb032f4, type: 2}
+  - {fileID: 2100000, guid: 92cff70e38e4a8f4d80b274916986644, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24711,7 +24713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1487205289
 Transform:
   m_ObjectHideFlags: 0
@@ -29556,7 +29558,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a56e37d8fbb9134088096454a87c3ff, type: 2}
+  - {fileID: 2100000, guid: 01a6717046987e34aae97b1a7292e32e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35307,10 +35309,10 @@ SceneRoots:
   - {fileID: 229150299}
   - {fileID: 818691770}
   - {fileID: 1678558493}
+  - {fileID: 629078214}
   - {fileID: 493680899}
   - {fileID: 338029668}
   - {fileID: 772985830}
-  - {fileID: 629078214}
   - {fileID: 508192923}
   - {fileID: 380375822}
   - {fileID: 669848450}

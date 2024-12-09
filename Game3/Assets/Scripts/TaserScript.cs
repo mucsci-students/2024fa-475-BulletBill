@@ -12,6 +12,7 @@ public class TaserScript : MonoBehaviour
     public ObjectGrabRelease script;
     private bool canShoot = true;
     private float timer;
+    private bool isHit = false;
     private GUIStyle taserStyle;
 
     void Start()
@@ -58,6 +59,10 @@ public class TaserScript : MonoBehaviour
                 canShoot = true;
                 timer = coolDownTime;
             }
+            if (timer <= 27f)
+            {
+                isHit = false;
+            }
         }
     }
 
@@ -73,7 +78,7 @@ public class TaserScript : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Enemy")
             {
-
+                isHit = true;
                 hit.collider.gameObject.SetActive(false); // Set the object to active
 
             }
@@ -86,12 +91,16 @@ public class TaserScript : MonoBehaviour
         {
             if (timer < 30f)
             {
-                GUI.Box(new Rect(10, 300, 1250, 100), "Taser Cooldwon: " + timer.ToString("F2"), taserStyle);
+                GUI.Box(new Rect(2700, 10, 1250, 100), "Taser Cooldown: " + timer.ToString("F2"), taserStyle);
             }
             else
             {
-                GUI.Box(new Rect(10, 300, 1250, 100), "Taser Ready!", taserStyle);
+                GUI.Box(new Rect(2700, 10, 1250, 100), "Taser Ready! Click to Shoot!", taserStyle);
             }
-        }   
+        }
+        if (isHit)
+        {
+            GUI.Box(new Rect(1200, 800, 1500, 100), "Enemy hit! Respawning in 15 seconds", taserStyle);
+        }
     }
 }
