@@ -28136,6 +28136,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1649121921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649121911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110c9e42e068d7e4d853f14461263d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowSpawn: {fileID: 669848450}
 --- !u!1 &1652507217
 GameObject:
   m_ObjectHideFlags: 0
@@ -33749,6 +33762,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8bb7b9bdfcec3b44a9e368f89bd9047, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1649121917}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8bb7b9bdfcec3b44a9e368f89bd9047, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1649121921}
   m_SourcePrefab: {fileID: 100100000, guid: c8bb7b9bdfcec3b44a9e368f89bd9047, type: 3}
 --- !u!1 &2007078621 stripped
 GameObject:
