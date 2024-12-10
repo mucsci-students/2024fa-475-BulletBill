@@ -11,9 +11,10 @@ public class EnemySpawn : MonoBehaviour
     public Vector3[] SpawnLocations;
     public Transform[] Traversal;
     public Transform Player;
-    public bool isBasementOpen = false;
+    // public bool isBasementOpen = false;
     public ShootArrow ShootArrowScript;
     public EnemySpawn EnemySpawnScript;
+    public ObjectGrabRelease GrabReleaseScript;
     private GameObject clone;
     private Transform currentLocation;
     public bool hitTaser = false;
@@ -36,7 +37,15 @@ public class EnemySpawn : MonoBehaviour
         {
 
             Debug.Log(currentLocation);
-            currentLocation = Traversal[Random.Range(0, 15)];
+            if (!GrabReleaseScript.isBasementDoorOpen)
+            {
+                currentLocation = Traversal[Random.Range(0, 15)];
+            }
+            else
+            {
+                currentLocation = Traversal[Random.Range(0, 20)];
+            }
+                
             Debug.Log(currentLocation);
             clone.GetComponent<EnemyControl>().target = currentLocation;
         }
@@ -63,7 +72,7 @@ public class EnemySpawn : MonoBehaviour
     }
     void respawn()
     {
-        if (!isBasementOpen)
+        if (!GrabReleaseScript.isBasementDoorOpen)
         {
             clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 4)], Quaternion.identity);
             currentLocation = Traversal[Random.Range(0, 15)];
@@ -75,7 +84,7 @@ public class EnemySpawn : MonoBehaviour
         else
         {
             clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 6)], Quaternion.identity);
-            currentLocation = Traversal[Random.Range(0, 19)];
+            currentLocation = Traversal[Random.Range(0, 20)];
             clone.GetComponent<EnemyControl>().target = currentLocation;
             //clone.GetComponent<EnemyControl>().target = Player;
             clone.GetComponent<HitByArrow>().script = ShootArrowScript;

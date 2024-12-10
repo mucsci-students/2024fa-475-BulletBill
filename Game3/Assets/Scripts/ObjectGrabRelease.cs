@@ -11,6 +11,7 @@ public class ObjectGrabRelease : MonoBehaviour
     public Animator jailDoor;
     public Animator safeDoor;
     public bool crossBowLoaded = false;
+    public bool isBasementDoorOpen = false;
     public GameObject objectInHand = null;
     public GameObject escapeDoor;
     private GameObject closestObject;
@@ -202,6 +203,7 @@ public class ObjectGrabRelease : MonoBehaviour
                 else if (objectInHand.name == "BasementKey" && Vector3.Distance(objectInHand.transform.position, basementDoor.transform.position) <= maxGrabDistance)
                 {
                     basementDoor.SetTrigger("openDoor");
+                    isBasementDoorOpen = true;
                 }
                 else if (objectInHand.name == "SafeKey" && Vector3.Distance(objectInHand.transform.position, safeDoor.transform.position) <= maxGrabDistance)
                 {
