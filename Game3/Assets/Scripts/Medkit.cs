@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Medkit : MonoBehaviour
 {
     public ObjectGrabRelease script;
+    public GameObject enemy;
     public EnemyAttack attackScript;
     private GUIStyle medkitStyle;
     void Start()
@@ -28,6 +30,8 @@ public class Medkit : MonoBehaviour
 
         // Adjust padding or other properties as needed
         medkitStyle.padding = new RectOffset(10, 10, 10, 10);
+
+        StartCoroutine (findEnemy());
     }
 
     // Update is called once per frame
@@ -43,6 +47,13 @@ public class Medkit : MonoBehaviour
                 script.objectInHand = null;
             }
         }
+    }
+
+    IEnumerator findEnemy()
+    {
+        yield return new WaitForSeconds (2f);
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        attackScript = enemy.transform.GetChild(3).GetComponent<EnemyAttack>();
     }
 
     void OnGUI()

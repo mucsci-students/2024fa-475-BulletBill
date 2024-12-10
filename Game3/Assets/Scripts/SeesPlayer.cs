@@ -20,11 +20,6 @@ public class SeesPlayer : MonoBehaviour
         script = scriptObject.GetComponent<EnemySpawn>(); // Get the "EnemySpawn" component from the object
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter (Collider other)
     {
@@ -39,7 +34,6 @@ public class SeesPlayer : MonoBehaviour
 
         if (other.transform.name == "Player1")
         {
-           Debug.Log("Player in range");
            if (!isFollowingPlayer)
                 Shoot();
                 
@@ -57,7 +51,6 @@ public class SeesPlayer : MonoBehaviour
         // if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity, layerMask))
         if (Physics.Raycast(enemy.transform.position, direction, out hit, Mathf.Infinity))
         {
-            Debug.Log(hit.transform.name);
             Debug.DrawLine(enemy.transform.position, hit.point, Color.red, 0.5f);
             //hit.collider.gameObject.SetActive(false);
 

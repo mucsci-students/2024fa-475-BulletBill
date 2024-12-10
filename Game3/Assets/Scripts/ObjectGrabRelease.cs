@@ -26,6 +26,11 @@ public class ObjectGrabRelease : MonoBehaviour
     private GameObject[] JailObjects = new GameObject[2];
     private GameObject SafeObject;
 
+    //for camera hiding
+    public GameObject enemy;
+    public SeesPlayer seeScript;
+    public EnemySpawn enemyScript;
+
     private GUIStyle buttonStyle;
     // Start is called before the first frame update
     void Start()
@@ -65,6 +70,8 @@ public class ObjectGrabRelease : MonoBehaviour
 
         // Adjust padding or other properties as needed
         buttonStyle.padding = new RectOffset(10, 10, 10, 10);
+
+        StartCoroutine(findEnemy());
     }
 
     // Update is called once per frame
@@ -236,6 +243,11 @@ public class ObjectGrabRelease : MonoBehaviour
                 closestCamera.enabled = true;
                 // set the player as inactive
                 player.SetActive(false);
+
+                //
+                seeScript.isFollowingPlayer = false;
+                enemyScript.clone.GetComponent<EnemyControl>().target = enemyScript.currentLocation;
+                Debug.Log("Player is hiding");
             }
         }
     }
@@ -275,6 +287,13 @@ public class ObjectGrabRelease : MonoBehaviour
         arrow.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         arrow.transform.localPosition = new Vector3(0, 0, -.5f);
         arrow.transform.localRotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    IEnumerator findEnemy()
+    {
+        yield return new WaitForSeconds (2f);
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        seeScript = enemy.transform.GetChild(4).GetComponent<SeesPlayer>();
     }
 
     void OnGUI()

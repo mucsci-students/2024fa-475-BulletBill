@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HidingToggleOff : MonoBehaviour
@@ -7,11 +8,13 @@ public class HidingToggleOff : MonoBehaviour
     public GameObject player;
     public Camera playerCamera;
     public Camera hidingCamera;
-    public SeesPlayer seeScript;
+    // public GameObject enemy;
+    // public SeesPlayer seeScript;
     private GUIStyle buttonStyle;
     // Start is called before the first frame update
     void Start()
     {
+        // StartCoroutine(findEnemy());
         // Initialize the style
         buttonStyle = new GUIStyle();
 
@@ -47,12 +50,18 @@ public class HidingToggleOff : MonoBehaviour
         }
     }
 
+    // IEnumerator findEnemy()
+    // {
+    //     yield return new WaitForSeconds (2f);
+    //     enemy = GameObject.FindGameObjectWithTag("Enemy");
+    //     seeScript = enemy.transform.GetChild(4).GetComponent<SeesPlayer>();
+    // }
+
     void OnGUI()
     {
         if(hidingCamera.enabled == true)
         {
             GUI.Box(new Rect(10, 10, 1250, 100), "Press R to stop hiding", buttonStyle);
-            seeScript.isFollowingPlayer = false;
         }
     }
 }

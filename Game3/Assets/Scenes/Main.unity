@@ -17350,6 +17350,9 @@ MonoBehaviour:
   - {fileID: 304410150}
   - {fileID: 1291804645}
   - {fileID: 1240032291}
+  enemy: {fileID: 0}
+  seeScript: {fileID: 0}
+  enemyScript: {fileID: 1929368455}
 --- !u!54 &967252292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17530,6 +17533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   script: {fileID: 967252290}
+  enemy: {fileID: 0}
   attackScript: {fileID: 0}
 --- !u!1001 &967370200
 PrefabInstance:
@@ -33754,6 +33758,9 @@ MonoBehaviour:
   ShootArrowScript: {fileID: 735661149}
   EnemySpawnScript: {fileID: 1929368455}
   GrabReleaseScript: {fileID: 967252290}
+  seesScript: {fileID: 0}
+  clone: {fileID: 0}
+  currentLocation: {fileID: 0}
   hitTaser: 0
   hitArrow: 0
 --- !u!1 &1933824407

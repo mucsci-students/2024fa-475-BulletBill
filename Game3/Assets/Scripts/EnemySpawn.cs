@@ -17,7 +17,7 @@ public class EnemySpawn : MonoBehaviour
     public ObjectGrabRelease GrabReleaseScript;
     public SeesPlayer seesScript;
     public GameObject clone;
-    private Transform currentLocation;
+    public Transform currentLocation;
     public bool hitTaser = false;
     public bool hitArrow = false;
     private float timer = 0f;
@@ -25,6 +25,7 @@ public class EnemySpawn : MonoBehaviour
     {
         respawn();
         clone.GetComponent<EnemyControl>().target = currentLocation;
+        seesScript = Demon.transform.GetChild(4).GetComponent<SeesPlayer>();
     }
 
     void Update()
@@ -35,7 +36,6 @@ public class EnemySpawn : MonoBehaviour
         {
             if (Vector3.Distance(clone.transform.position, currentLocation.transform.position) < .25)
             {
-                //Debug.Log(currentLocation);
                 if (!GrabReleaseScript.isBasementDoorOpen)
                 {
                     currentLocation = Traversal[Random.Range(0, 15)];
