@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     public GameObject MainMenu;
-    public GameObject GameModesUI;
-    public GameObject OptionsMenuUI;
-    public GameObject HelpText;
+    public GameObject TutorialMenuUI1;
+    public GameObject TutorialMenuUI2;
+    public GameObject TutorialMenuUI3;
     public GameObject MusicManager;
 
     public void StartGame()
@@ -25,52 +25,48 @@ public class MainMenuUI : MonoBehaviour
     public void Start()
     {
         MainMenu.SetActive(true);
-        GameModesUI.SetActive(false);
-        OptionsMenuUI.SetActive(false);
+        TutorialMenuUI1.SetActive(false);
 
     }
-    public void GameModes()
-    {
-        Debug.Log("Going to Game Modes");
-        MainMenu.SetActive(false);
-        GameModesUI.SetActive(true);
-    }
 
-    public void Options()
+    public void Tutorial()
     {
-        Debug.Log("Going to options");
         MainMenu.SetActive(false);
-        OptionsMenuUI.SetActive(true);
+        TutorialMenuUI1.SetActive(true);
     }
 
     public void Quit()
     {
-        Debug.Log("Quitting Game...");
         Application.Quit();
     }
-    public void Help()
+    public void TutorialMenu1Back()
     {
-        Debug.Log("Displaying Help");
-        HelpText.SetActive(true);
-    }
-
-    public void GameMenuBack()
-    {
-        GameModesUI.SetActive(false);
+        TutorialMenuUI1.SetActive(false);
         MainMenu.SetActive(true);
     }
-    public void OptionsMenuBack()
+    public void TutorialMenu2Back()
     {
-        OptionsMenuUI.SetActive(false);
+        TutorialMenuUI2.SetActive(false);
+        TutorialMenuUI1.SetActive(true);
+    }
+    public void TutorialMenu3Back()
+    {
+        TutorialMenuUI3.SetActive(false);
+        TutorialMenuUI2.SetActive(true);
+    }
+    public void TotorialMenu1Next()
+    {
+        TutorialMenuUI1.SetActive(false);
+        TutorialMenuUI2.SetActive(true);
+    }
+    public void TotorialMenu2Next()
+    {
+        TutorialMenuUI2.SetActive(false);
+        TutorialMenuUI3.SetActive(true);
+    }
+    public void TotorialMenu3Next()
+    {
+        TutorialMenuUI3.SetActive(false);
         MainMenu.SetActive(true);
-    }
-
-    public void HelpTextBack()
-    {
-        HelpText.SetActive(false);
-    }
-    public void ResetScores()
-    {
-
     }
 }
