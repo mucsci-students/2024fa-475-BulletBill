@@ -312,15 +312,16 @@ public class ObjectGrabRelease : MonoBehaviour
         if (Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= 1.0f)
         {
             GUI.Box(new Rect(10, 210, 1250, 100), "Items need to escape (In Order):", buttonStyle);
-            GUI.Box(new Rect(10, 310, 1250, 100), "1. Electricity Turned On (Lever)", buttonStyle);
+            GUI.Box(new Rect(10, 310, 1250, 100), "1. Bolt Cutters", buttonStyle);
             GUI.Box(new Rect(10, 410, 1250, 100), "2. Screwdriver", buttonStyle);
             GUI.Box(new Rect(10, 510, 1250, 100), "3. Crowbar", buttonStyle);
-            GUI.Box(new Rect(10, 610, 1250, 100), "4. Escape Key", buttonStyle);
+            GUI.Box(new Rect(10, 610, 1250, 100), "4. Electricity Turned On (Lever)", buttonStyle);
+            GUI.Box(new Rect(10, 710, 1250, 100), "5. Escape Key", buttonStyle);
         }
 
         if (Vector3.Distance(player.transform.position, closestCamera.transform.position) <= maxGrabDistance && closestCamera != null)
         {
-            GUI.Box(new Rect(10, 710, 1250, 100), "Press R to hide", buttonStyle);
+            GUI.Box(new Rect(10, 810, 1250, 100), "Press R to hide", buttonStyle);
         }
     }
 }

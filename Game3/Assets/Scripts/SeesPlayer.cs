@@ -44,14 +44,14 @@ public class SeesPlayer : MonoBehaviour
         RaycastHit hit;
         enemyPos = enemy.transform.position;
         playerPos = player.transform.position;
-        playerPos.y += .5f;
-        enemyPos.y += .5f;
+        playerPos.y += .3f;
+        enemyPos.y += .3f;
         Vector3 direction = (playerPos - enemyPos).normalized; // Calculate direction vector
         //Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
         // if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity, layerMask))
         if (Physics.Raycast(enemy.transform.position, direction, out hit, Mathf.Infinity))
         {
-            Debug.DrawLine(enemy.transform.position, hit.point, Color.red, 0.5f);
+            //Debug.DrawLine(enemy.transform.position, hit.point, Color.red, 0.5f);
             //hit.collider.gameObject.SetActive(false);
 
             //if (hit.collider.gameObject.tag == "Player")
