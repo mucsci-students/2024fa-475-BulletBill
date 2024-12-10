@@ -23,32 +23,38 @@ public class MoveV2 : MonoBehaviour
     }
     void Update()
     {
-        MyInput();
-        ControlDrag();
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            if (timer == 0f)
+        if (!PauseGame.isPaused) {
+            MyInput();
+            ControlDrag();
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                SoundFXManager.instance.PlaySoundFXClip(stepSound, transform, 0.05f);
-            }
+                if (timer == 0f)
+                {
+                    SoundFXManager.instance.PlaySoundFXClip(stepSound, transform, 0.05f);
+                }
 
-            timer += Time.deltaTime;
-            if (timer >= .85f)
-            {
-                SoundFXManager.instance.PlaySoundFXClip(stepSound, transform, 0.05f);
-                timer = 0.1f;
+                timer += Time.deltaTime;
+                if (timer >= .85f)
+                {
+                    SoundFXManager.instance.PlaySoundFXClip(stepSound, transform, 0.05f);
+                    timer = 0.1f;
+                }
             }
-        }
-        else
-        {
-            timer = 0f;
+            else
+            {
+                timer = 0f;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if (!onStairs)
+        if (!PauseGame.isPaused)
+        {
+            if (!onStairs)
             MovePlayer();
+        }
+        
     }
 
     void ControlDrag()

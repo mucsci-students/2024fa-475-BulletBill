@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Net.NetworkInformation;
 
 public class PauseGame : MonoBehaviour
 {
 
+    public static bool isPaused = false;
     public GameObject PauseMenuUI;
     public GameObject GameOverUI;
     public GameObject CrosshairUI;
@@ -24,13 +26,19 @@ public class PauseGame : MonoBehaviour
         {
             // pause and activate pause menu
             Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             PauseMenuUI.SetActive(true);
+            isPaused = true;
         }
         else
         {
             // if paused, resume game and remove pause menu
             Time.timeScale = 1;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             PauseMenuUI.SetActive(false);
+            isPaused = false;
         }
     }
 
