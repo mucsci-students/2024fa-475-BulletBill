@@ -241,6 +241,7 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 playerCamera.enabled = false;
                 closestCamera.enabled = true;
+                closestCamera.GetComponent<AudioListener>().enabled = true;
                 // set the player as inactive
                 player.SetActive(false);
 

@@ -44,6 +44,7 @@ public class HidingToggleOff : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 playerCamera.enabled = true;
+                hidingCamera.GetComponent<AudioListener>().enabled = false;
                 hidingCamera.enabled = false;
                 player.SetActive(true);
             }
