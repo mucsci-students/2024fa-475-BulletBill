@@ -79,7 +79,8 @@ public class TaserScript : MonoBehaviour
             if (hit.collider.gameObject.tag == "Enemy")
             {
                 isHit = true;
-                hit.collider.gameObject.SetActive(false); // Set the object to active
+                //hit.collider.gameObject.SetActive(false); // Set the object to active
+                Destroy (hit.collider.gameObject);
 
             }
             

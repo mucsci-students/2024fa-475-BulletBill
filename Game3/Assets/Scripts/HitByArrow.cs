@@ -34,7 +34,8 @@ public class HitByArrow : MonoBehaviour
         if (other.gameObject.name == "Arrow")
         {
             script.isHit = true;
-            gameObject.SetActive(false);
+            Destroy (other);
+            //gameObject.SetActive(false);
         }
     }
 }
