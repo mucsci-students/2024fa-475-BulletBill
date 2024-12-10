@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveV2 : MonoBehaviour
 {
     
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] public float moveSpeed = 1f;
     [SerializeField] private float moveMult = 1f;
     [SerializeField] private float rbDrag = 6f;
     [SerializeField] public AudioClip stepSound;
