@@ -6,6 +6,7 @@ public class HitByArrow : MonoBehaviour
 {
     private GUIStyle hitStyle;
     public ShootArrow script;
+    public EnemySpawn enemyScript;
     void Start()
     {
         // Initialize the style
@@ -31,11 +32,12 @@ public class HitByArrow : MonoBehaviour
 
     void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.name == "Arrow")
+        if (other.gameObject.name == "Arrow" && script.hasArrowBeenFired)
         {
             script.isHit = true;
-            Destroy (other);
-            //gameObject.SetActive(false);
+            enemyScript.hitArrow = true;
+            //Destroy (gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

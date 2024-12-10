@@ -13,6 +13,7 @@ public class TaserScript : MonoBehaviour
     private bool canShoot = true;
     private float timer;
     private bool isHit = false;
+    public EnemySpawn enemyScript;
     private GUIStyle taserStyle;
 
     void Start()
@@ -79,8 +80,9 @@ public class TaserScript : MonoBehaviour
             if (hit.collider.gameObject.tag == "Enemy")
             {
                 isHit = true;
-                //hit.collider.gameObject.SetActive(false); // Set the object to active
-                Destroy (hit.collider.gameObject);
+                enemyScript.hitTaser = true;
+                hit.collider.gameObject.SetActive(false); // Set the object to active
+                //Destroy (hit.collider.gameObject);
 
             }
             

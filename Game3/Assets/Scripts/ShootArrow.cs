@@ -11,7 +11,9 @@ public class ShootArrow : MonoBehaviour
     public GameObject arrow;
     private GUIStyle crossbowStyle;
     private float timer = 0f;
+    private float arrowTimer = 0f;
     public bool isHit = false;
+    public bool hasArrowBeenFired = false;
     void Start()
     {
         // Initialize the style
@@ -55,6 +57,15 @@ public class ShootArrow : MonoBehaviour
                 timer = 0f;
             }
         }
+        if (hasArrowBeenFired)
+        {
+            arrowTimer += Time.deltaTime;
+            if (arrowTimer >= 3f)
+            {
+                hasArrowBeenFired = false;
+                arrowTimer = 0f;
+            }
+        }
     }
     void Shoot ()
     {
@@ -64,6 +75,7 @@ public class ShootArrow : MonoBehaviour
         arrow.transform.parent = null;
         //arrow.transform.rotation = Quaternion.LookRotation(rb.velocity);
         rb.velocity = fpsCam.transform.forward * arrowSpeed;
+        hasArrowBeenFired = true;
         script.crossBowLoaded = false;
     }
 
@@ -82,7 +94,7 @@ public class ShootArrow : MonoBehaviour
         }   
         if (isHit)
         {
-            GUI.Box(new Rect(1200, 800, 1500, 100), "Enemy hit! Respawning in 25 seconds", crossbowStyle);
+            GUI.Box(new Rect(1200, 800, 1500, 100), "Enemy hit! Respawning in 20 seconds", crossbowStyle);
         }
     }
 }

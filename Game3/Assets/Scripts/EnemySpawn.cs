@@ -13,21 +13,25 @@ public class EnemySpawn : MonoBehaviour
     public Transform Player;
     public bool isBasementOpen = false;
     public ShootArrow ShootArrowScript;
+    public EnemySpawn EnemySpawnScript;
     private GameObject clone;
     private Transform currentLocation;
     public bool hitTaser = false;
     public bool hitArrow = false;
+    private float timer = 0f;
     void Start()
     {
-        clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 4)], Quaternion.identity);
-        currentLocation = Traversal[Random.Range(0, 15)];
-        clone.GetComponent<EnemyControl>().target = currentLocation;
-        //clone.GetComponent<EnemyControl>().target = Player;
-        clone.GetComponent<HitByArrow>().script = ShootArrowScript;
+        respawn();
+        // clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 4)], Quaternion.identity);
+        // currentLocation = Traversal[Random.Range(0, 15)];
+        // clone.GetComponent<EnemyControl>().target = currentLocation;
+        // //clone.GetComponent<EnemyControl>().target = Player;
+        // clone.GetComponent<HitByArrow>().script = ShootArrowScript;
     }
 
     void Update()
     {
+        // Makes demon traverse the map to a location
         if (Vector3.Distance(clone.transform.position, currentLocation.transform.position) < .25)
         {
 
@@ -36,16 +40,46 @@ public class EnemySpawn : MonoBehaviour
             Debug.Log(currentLocation);
             clone.GetComponent<EnemyControl>().target = currentLocation;
         }
+        if (hitTaser)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 15f)
+            {
+                hitTaser = false;
+                respawn();
+                timer = 0f;
+            }
+        }
+        if (hitArrow)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 20f)
+            {
+                hitTaser = false;
+                respawn();
+                timer = 0f;
+            }
+        }
     }
     void respawn()
     {
         if (!isBasementOpen)
         {
             clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 4)], Quaternion.identity);
+            currentLocation = Traversal[Random.Range(0, 15)];
+            clone.GetComponent<EnemyControl>().target = currentLocation;
+            //clone.GetComponent<EnemyControl>().target = Player;
+            clone.GetComponent<HitByArrow>().script = ShootArrowScript;
+            clone.GetComponent<HitByArrow>().enemyScript = EnemySpawnScript;
         }
         else
         {
             clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 6)], Quaternion.identity);
+            currentLocation = Traversal[Random.Range(0, 19)];
+            clone.GetComponent<EnemyControl>().target = currentLocation;
+            //clone.GetComponent<EnemyControl>().target = Player;
+            clone.GetComponent<HitByArrow>().script = ShootArrowScript;
+            clone.GetComponent<HitByArrow>().enemyScript = EnemySpawnScript;
         }
     }
 }

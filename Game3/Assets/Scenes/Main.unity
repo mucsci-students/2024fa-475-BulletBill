@@ -5075,7 +5075,7 @@ Transform:
   m_GameObject: {fileID: 245526190}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.183788, y: -12.189738, z: 14.926564}
+  m_LocalPosition: {x: -13.183788, y: -18.32, z: 14.926564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12262,7 +12262,7 @@ Transform:
   m_GameObject: {fileID: 669848449}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.135, y: 0.25, z: 2.575}
+  m_LocalPosition: {x: 0.135, y: 0.25, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13240,6 +13240,7 @@ MonoBehaviour:
   script: {fileID: 967252290}
   arrow: {fileID: 1649121911}
   isHit: 0
+  hasArrowBeenFired: 0
 --- !u!108 &735661153
 Light:
   m_ObjectHideFlags: 0
@@ -17440,6 +17441,7 @@ MonoBehaviour:
   coolDownTime: 30
   fpsCam: {fileID: 1383194506}
   script: {fileID: 967252290}
+  enemyScript: {fileID: 1929368455}
 --- !u!1001 &967370200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33375,6 +33377,9 @@ MonoBehaviour:
   Player: {fileID: 967252296}
   isBasementOpen: 0
   ShootArrowScript: {fileID: 735661149}
+  EnemySpawnScript: {fileID: 1929368455}
+  hitTaser: 0
+  hitArrow: 0
 --- !u!1 &1933824407
 GameObject:
   m_ObjectHideFlags: 0
@@ -34448,7 +34453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8bb7b9bdfcec3b44a9e368f89bd9047, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.219
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8bb7b9bdfcec3b44a9e368f89bd9047, type: 3}
       propertyPath: m_LocalPosition.z

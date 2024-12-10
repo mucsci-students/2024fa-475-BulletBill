@@ -217,11 +217,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5735572
+  m_Radius: 1.2
   m_Height: 2.5705118
   m_Direction: 1
   m_Center: {x: 0.007913907, y: 1.4666015, z: 0}
@@ -244,9 +244,9 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
-  m_Height: 2.5705118
-  m_Direction: 1
+  m_Radius: 1.3
+  m_Height: 3
+  m_Direction: 0
   m_Center: {x: 0.007913907, y: 1.4666015, z: 0}
 --- !u!114 &6392795505201321099
 MonoBehaviour:
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   script: {fileID: 0}
+  enemyScript: {fileID: 0}
 --- !u!114 &8887648884222271311
 MonoBehaviour:
   m_ObjectHideFlags: 0
