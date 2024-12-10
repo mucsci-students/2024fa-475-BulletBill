@@ -67,7 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemy: {fileID: 2721703628325492775}
+  enemy: {fileID: 0}
+  scriptObject: {fileID: 0}
   script: {fileID: 0}
 --- !u!1 &6688170440034524561
 GameObject:

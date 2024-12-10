@@ -15,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
     public ShootArrow ShootArrowScript;
     public EnemySpawn EnemySpawnScript;
     public ObjectGrabRelease GrabReleaseScript;
-    private GameObject clone;
+    public GameObject clone;
     private Transform currentLocation;
     public bool hitTaser = false;
     public bool hitArrow = false;

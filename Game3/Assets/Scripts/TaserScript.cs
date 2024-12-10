@@ -74,7 +74,6 @@ public class TaserScript : MonoBehaviour
         // if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity, layerMask))
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
-            Debug.Log(hit.transform.name);
             //hit.collider.gameObject.SetActive(false);
 
             if (hit.collider.gameObject.tag == "Enemy")

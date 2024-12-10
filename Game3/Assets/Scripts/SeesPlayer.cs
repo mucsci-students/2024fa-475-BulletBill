@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SeesPlayer : MonoBehaviour
@@ -8,11 +9,15 @@ public class SeesPlayer : MonoBehaviour
     public GameObject enemy;
     public GameObject scriptObject;
     public EnemySpawn script;
+    public bool isFollowingPlayer = false;
+    private Vector3 enemyPos;
+    private Vector3 playerPos;
     void Start()
     {
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
         player = GameObject.FindGameObjectWithTag("Player");
         scriptObject = GameObject.FindGameObjectWithTag("EnemySpawn"); // Find the GameObject
-        script = scriptObject.GetComponent<EnemySpawn>(); // Get the "MyScript" component from the object
+        script = scriptObject.GetComponent<EnemySpawn>(); // Get the "EnemySpawn" component from the object
     }
 
     // Update is called once per frame
@@ -23,38 +28,57 @@ public class SeesPlayer : MonoBehaviour
 
     void OnTriggerEnter (Collider other)
     {
-        if (other.tag == "Player")
+        if (other.transform.name == "Player1")
         {
-            if (!(script.GetComponent<EnemyControl>().target = script.Player))
+            if (!isFollowingPlayer)
                 Shoot();
         }
     }
     void OnTriggerStay (Collider other)
     {
-        if (other.tag == "Player")
+
+        if (other.transform.name == "Player1")
         {
-            if (!(script.GetComponent<EnemyControl>().target = script.Player))
+           Debug.Log("Player in range");
+           if (!isFollowingPlayer)
                 Shoot();
+                
         }
     }
     void Shoot ()
     {
         RaycastHit hit;
-        Vector3 enemyPos = enemy.transform.position;
-        enemyPos.z += 1;
-        Vector3 direction = player.transform.position - enemyPos; // Calculate direction vector
+        enemyPos = enemy.transform.position;
+        playerPos = player.transform.position;
+        playerPos.y += .5f;
+        enemyPos.y += .5f;
+        Vector3 direction = (playerPos - enemyPos).normalized; // Calculate direction vector
         //Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
         // if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity, layerMask))
-        if (Physics.Raycast(enemy.transform.position, direction, out hit))
+        if (Physics.Raycast(enemy.transform.position, direction, out hit, Mathf.Infinity))
         {
             Debug.Log(hit.transform.name);
+            Debug.DrawLine(enemy.transform.position, hit.point, Color.red, 0.5f);
             //hit.collider.gameObject.SetActive(false);
 
+            //if (hit.collider.gameObject.tag == "Player")
             if (hit.collider.gameObject.tag == "Player")
             {
-                script.GetComponent<EnemyControl>().target = script.Player;
+                Debug.Log("Tracking Player");
+                script.clone.GetComponent<EnemyControl>().target = script.Player;
+                isFollowingPlayer = true;
             }
             
         }
     }
+
+    // private void OnDrawGizmos()
+
+    // {
+
+    //     Gizmos.color = Color.red; // Set gizmo color
+
+    //     Gizmos.DrawWireSphere(enemyPos, .5f); // Draw a wire sphere at the specified position
+
+    // }
 }

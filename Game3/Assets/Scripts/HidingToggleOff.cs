@@ -7,6 +7,8 @@ public class HidingToggleOff : MonoBehaviour
     public GameObject player;
     public Camera playerCamera;
     public Camera hidingCamera;
+    public EnemySpawn script;
+    public SeesPlayer seeScript;
     private GUIStyle buttonStyle;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,8 @@ public class HidingToggleOff : MonoBehaviour
         if(hidingCamera.enabled == true)
         {
             GUI.Box(new Rect(10, 10, 1250, 100), "Press R to stop hiding", buttonStyle);
+            script.clone.GetComponent<EnemyControl>().target = null;
+            seeScript.isFollowingPlayer = false;
         }
     }
 }
