@@ -15,6 +15,7 @@ public class EnemySpawn : MonoBehaviour
     public ShootArrow ShootArrowScript;
     public EnemySpawn EnemySpawnScript;
     public ObjectGrabRelease GrabReleaseScript;
+    public SeesPlayer seesScript;
     public GameObject clone;
     private Transform currentLocation;
     public bool hitTaser = false;
@@ -23,12 +24,14 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         respawn();
+        clone.GetComponent<EnemyControl>().target = currentLocation;
     }
 
     void Update()
     {
         // Makes demon traverse the map to a location
-        if (clone.GetComponent<EnemyControl>().target != Player)
+        //if (clone.GetComponent<EnemyControl>().target != Player)
+        if (seesScript.isFollowingPlayer == false)
         {
             if (Vector3.Distance(clone.transform.position, currentLocation.transform.position) < .25)
             {
