@@ -33682,7 +33682,7 @@ GameObject:
   - component: {fileID: 1929368455}
   m_Layer: 0
   m_Name: Spawn points
-  m_TagString: Untagged
+  m_TagString: EnemySpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

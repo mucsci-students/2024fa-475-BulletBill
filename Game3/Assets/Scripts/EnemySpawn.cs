@@ -23,32 +23,30 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         respawn();
-        // clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 4)], Quaternion.identity);
-        // currentLocation = Traversal[Random.Range(0, 15)];
-        // clone.GetComponent<EnemyControl>().target = currentLocation;
-        // //clone.GetComponent<EnemyControl>().target = Player;
-        // clone.GetComponent<HitByArrow>().script = ShootArrowScript;
     }
 
     void Update()
     {
         // Makes demon traverse the map to a location
-        if (Vector3.Distance(clone.transform.position, currentLocation.transform.position) < .25)
+        if (clone.GetComponent<EnemyControl>().target != Player)
         {
-
-            Debug.Log(currentLocation);
-            if (!GrabReleaseScript.isBasementDoorOpen)
+            if (Vector3.Distance(clone.transform.position, currentLocation.transform.position) < .25)
             {
-                currentLocation = Traversal[Random.Range(0, 15)];
-            }
-            else
-            {
-                currentLocation = Traversal[Random.Range(0, 20)];
-            }
-                
-            Debug.Log(currentLocation);
-            clone.GetComponent<EnemyControl>().target = currentLocation;
+                //Debug.Log(currentLocation);
+                if (!GrabReleaseScript.isBasementDoorOpen)
+                {
+                    currentLocation = Traversal[Random.Range(0, 15)];
+                }
+                else
+                {
+                    currentLocation = Traversal[Random.Range(0, 20)];
+                }
+                    
+                //Debug.Log(currentLocation);
+                clone.GetComponent<EnemyControl>().target = currentLocation;
+            } 
         }
+        
         if (hitTaser)
         {
             timer += Time.deltaTime;

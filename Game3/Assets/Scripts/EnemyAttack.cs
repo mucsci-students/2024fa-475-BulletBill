@@ -15,7 +15,7 @@ public class EnemyAttack : MonoBehaviour
             script.isWalk = false;
             StartCoroutine(attack());
             script.anim.SetTrigger("attackTrigger");
-            Debug.Log("Test Pass");
+            //Debug.Log("Test Pass");
             if (health == 0)
             {
                 //player=dead

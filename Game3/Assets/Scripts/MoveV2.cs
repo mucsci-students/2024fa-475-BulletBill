@@ -84,7 +84,6 @@ public class MoveV2 : MonoBehaviour
     {
         if (other.tag == "Stairs")
         {
-            Debug.Log("In stairs");
             onStairs = true;
             gameObject.GetComponent<CapsuleCollider>().material = normalMat;
             StairsInput();
@@ -95,7 +94,6 @@ public class MoveV2 : MonoBehaviour
     {
         if (other.tag == "Stairs")
         {
-            Debug.Log("Exited Stairs");
             onStairs = false;
             gameObject.GetComponent<CapsuleCollider>().material = otherMat;
         }
