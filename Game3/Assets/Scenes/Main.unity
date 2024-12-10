@@ -2455,8 +2455,8 @@ Transform:
   m_GameObject: {fileID: 140501361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.325, y: -0.25, z: -11.025}
-  m_LocalScale: {x: 0.75, y: 1.025, z: 0.10000001}
+  m_LocalPosition: {x: -0.361, y: -0.25, z: -11.025}
+  m_LocalScale: {x: 0.678, y: 1.025, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1090105406}
@@ -11376,6 +11376,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc8eeeec0278b8f4caed152facfb4886, type: 3}
   m_PrefabInstance: {fileID: 634503693}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &634721894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634721895}
+  m_Layer: 0
+  m_Name: TraversalLocations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &634721895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634721894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1738970519}
+  - {fileID: 1812056068}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635057766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11802,7 +11835,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.05
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: cafdd49422f06f448967f2765cfe2f89, type: 2}
   m_BuildHeightMesh: 0
@@ -15691,6 +15724,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901971817}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &903669501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903669502}
+  m_Layer: 0
+  m_Name: UpstairsBathroomSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903669502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903669501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.506, y: 0.893, z: 1.364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1929368454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904083838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7321423145260268018, guid: d5076481aac507e4a8a37c3b0eea7727, type: 3}
@@ -27469,7 +27533,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.05
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c1af27cd605e6b7419047dd1b1defb7c, type: 2}
   m_BuildHeightMesh: 0
@@ -29585,6 +29649,37 @@ Transform:
   - {fileID: 1588186815}
   m_Father: {fileID: 1617926722}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &1738970518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738970519}
+  m_Layer: 0
+  m_Name: LivingRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1738970519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738970518}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.87, y: 0.045, z: -0.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 634721895}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1739836465
 GameObject:
   m_ObjectHideFlags: 0
@@ -30621,6 +30716,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7480cbc394f37400e934ea8387eeea57, type: 3}
   m_PrefabInstance: {fileID: 647893920}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1812056067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812056068}
+  m_Layer: 0
+  m_Name: LivingRoom (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1812056068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812056067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.928, y: 0.045, z: 1.176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 634721895}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818684911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdff0b6c48d3c174b96c9f46c51b52f9, type: 3}
@@ -32654,9 +32780,10 @@ Transform:
   m_Children:
   - {fileID: 892109485}
   - {fileID: 2007163694}
+  - {fileID: 1918239559}
+  - {fileID: 903669502}
   - {fileID: 2068673595}
   - {fileID: 1530437855}
-  - {fileID: 1918239559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1929368455
@@ -32675,10 +32802,13 @@ MonoBehaviour:
   SpawnLocations:
   - {x: -3, y: 0.1, z: -2}
   - {x: -2.719, y: 0.1, z: 2.803}
+  - {x: 7.33, y: 0.893, z: 2.665}
+  - {x: 4.506, y: 0.893, z: 1.364}
   - {x: 2.415, y: -0.7032, z: -5.912}
   - {x: -2.342, y: -0.7032, z: -10.087}
-  - {x: 7.33, y: 0.893, z: 2.665}
   Player: {fileID: 967252296}
+  isBasementOpen: 0
+  ShootArrowScript: {fileID: 735661149}
 --- !u!1 &1933824407
 GameObject:
   m_ObjectHideFlags: 0
@@ -36736,3 +36866,4 @@ SceneRoots:
   - {fileID: 669848450}
   - {fileID: 289314730}
   - {fileID: 1929368454}
+  - {fileID: 634721895}
