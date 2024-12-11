@@ -607,27 +607,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Objective: Escape the house by finding objects located randomly around
-    that can be used to escape while running away from the enemy
+  m_text: 'Objective: Escape the house in the fastest time by finding objects located
+    randomly around the house that can be used to escape while running away from
+    the enemy
 
 
-    In order to
-    escape, you need to complete these 5 tasks:
+    In order to escape, you need to complete these 5 tasks:
 
-    1. Use the Bolt Cutters to cut
-    the chains on the escape door
+    1.
+    Use the Bolt Cutters to cut the chains on the escape door
 
-    2. Use the Screwdriver to remove the screws
-    holding the planks in place
+    2. Use the Screwdriver
+    to remove the screws holding the planks in place
 
-    3. Use the Crowbar to remove the planks on the
-    escape door
+    3. Use the Crowbar to remove
+    the planks on the escape door
 
-    4. Use the Lever to turn on the power and change the light from
-    red to green in the basement
+    4. Use the Lever to turn on the power and
+    change the light from red to green in the basement
 
-    5. Use the Escape Key on the escape door once
-    all other tasks are complete'
+    5. Use the Escape Key
+    on the escape door once all other tasks are complete'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -100.885254, y: 0, z: -89.262474, w: -312.81747}
+  m_margin: {x: -100.885254, y: 0, z: -89.262474, w: -47.326782}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2753,7 +2753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00036621094, y: 164.6}
+  m_AnchoredPosition: {x: 0.00036621094, y: 172.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591323323
@@ -2791,15 +2791,18 @@ MonoBehaviour:
     more intense the music plays
 
     6. The enemy wanders to positions around the
-    house. If you are in sight of the enemy, the enemy will continue to chase you
-    until you hide within certain objects
+    house. If you are in sight of the enemy, the enemy will chase you until you hide
+    within certain objects
 
-    7. After being hit with the taser
-    or arrow, the enemy will randomly spawn somewhere in the house after a set amount
-    of time
+    7. After being hit with the taser or arrow, the enemy
+    will randomly spawn somewhere in the house after a set amount of time
 
-    8. New positions for the enemy to traverse to, and new spawn locations
-    for the enemy to respawn at will become active after the basement door is opened'
+    8.
+    New positions for the enemy to traverse to, and new spawn locations for the enemy
+    to respawn at will become active after the basement door is opened
+
+    9. You
+    can take up to 2 hits from the enemy before dying'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2862,7 +2865,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -100.885254, y: 0, z: -89.262474, w: -306.05496}
+  m_margin: {x: -100.885254, y: 0, z: -89.262474, w: -334.08957}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3657,7 +3660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00012207031, y: 166}
+  m_AnchoredPosition: {x: 0.00012207031, y: 169.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135728149
@@ -3703,18 +3706,18 @@ MonoBehaviour:
     Medkit: Heals you back to full
     health (1x use)
 
-    Stim: Increase the speed of the player (1x use)
+    Stim: Increases the speed of the player for 30 seconds (1x
+    use)
 
-    Taser:
-    If aimed at enemy and hits, respawns the enemy in 15 seconds. Has a 30 second
-    cooldown after being shot
+    Taser: If aimed at enemy and hits, respawns the enemy in 15 seconds.
+    Has a 30 second cooldown after being shot
 
-    Arrow: Can be loaded into the crossbow if picked
-    up when currently holding the crossbow
+    Arrow: Can be loaded into the
+    crossbow if picked up when currently holding the crossbow
 
-    Crossbow: If aimed at the enemy,
-    is fired, and hits, respawns the enemy in 20 seconds. Can reload arrow as many
-    times as desired'
+    Crossbow: If aimed
+    at the enemy, is fired, and hits, respawns the enemy in 20 seconds. Can reload
+    arrow as many times as desired'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
