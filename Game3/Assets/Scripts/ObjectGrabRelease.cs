@@ -69,16 +69,16 @@ public class ObjectGrabRelease : MonoBehaviour
         otherPositions[6] = new Vector3(-3.453f, -0.711f, -8.59f);
         otherPositions[7] = new Vector3(4.67f, 0.99f, -0.56f);
         otherPositions[8] = new Vector3(3.37f, 0.12f, 1.03f);
-        otherPositions[9] = new Vector3(1.719f, 0.12f, 1.03f);
-        otherPositions[10] = new Vector3(-3.453f, -0.711f, -7.78f);
-        otherPositions[11] = new Vector3(-0.9f, -0.711f, -7.78f);
-        otherPositions[12] = new Vector3(-1.49f, -0.545f, -6.165f);
-        otherPositions[13] = new Vector3(1.783f, -0.652f, -6.165f);
-        otherPositions[14] = new Vector3(3.159f, -0.652f, -6.165f);
-        otherPositions[15] = new Vector3(2.88f, -0.65f, -4.226f);
-        otherPositions[16] = new Vector3(3.154f, -0.65f, -9.47f);
-        hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
-        hiddenPositions[1] = new Vector3(8.788f, 0.89f, 3.016f);
+        otherPositions[9] = new Vector3(1.719f, 0.12f, 1.03f); // power box room corner
+        otherPositions[10] = new Vector3(-3.453f, -0.587f, -7.78f); // game room
+        otherPositions[11] = new Vector3(-0.9f, -0.587f, -7.78f); // game room
+        otherPositions[12] = new Vector3(-1.49f, -0.525f, -6.165f); // hockey table
+        otherPositions[13] = new Vector3(1.783f, -0.652f, -6.165f); // gym room
+        otherPositions[14] = new Vector3(3.159f, -0.652f, -6.165f); // gym room
+        otherPositions[15] = new Vector3(2.88f, -0.65f, -4.226f); // gym room
+        otherPositions[16] = new Vector3(3.154f, -0.65f, -9.47f); // bottom jail
+        hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f); //jail
+        hiddenPositions[1] = new Vector3(8.788f, 0.89f, 3.016f); // safe
         SetUpObjects();
 
         // Initialize the style
