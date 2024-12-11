@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stim : MonoBehaviour
 {
+    [SerializeField] public AudioClip stimSound;
     public ObjectGrabRelease script;
     public GameObject canvas;
     public GameObject stim;
@@ -47,10 +48,11 @@ public class Stim : MonoBehaviour
             {
                 isBoosted = true;
                 canvas.SetActive(true);
-                moveScript.moveSpeed = oldSpeed * 1.15f;
+                SoundFXManager.instance.PlaySoundFXClip(stimSound, transform, 0.4f);
+                moveScript.moveSpeed = oldSpeed * 1.2f;
                 script.objectInHand.transform.parent = null;
                 script.objectInHand = null;
-                stim.transform.position = new Vector3(3f, 0.377f, -10.734f);
+                stim.transform.position = new Vector3(2.5f, 0.377f, -10.734f);
                 stim.SetActive(false);
             }
         }

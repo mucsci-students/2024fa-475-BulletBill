@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectGrabRelease : MonoBehaviour
 {
+    [SerializeField] public AudioClip keyUnlockSound;
     public GameObject player;
     public Camera playerCamera;
     public GameObject[] objectArray = new GameObject[13];
@@ -27,12 +28,12 @@ public class ObjectGrabRelease : MonoBehaviour
     private Camera closestCamera;
     private float maxGrabDistance = 0.8f;
     private Vector3[] keyPositions = new Vector3[8];
-    private Vector3[] otherPositions = new Vector3[17];
+    private Vector3[] otherPositions = new Vector3[20];
     private Vector3[] hiddenPositions = new Vector3[2];
 
     private GameObject JailObject;
     private GameObject SafeObject;
-    private bool basementDoorOpen = false;
+    //private bool basementDoorOpen = false;
     private bool jailDoorOpen = false;
     private bool safeOpen = false;
     private bool chainsOffBool = false;
@@ -76,7 +77,10 @@ public class ObjectGrabRelease : MonoBehaviour
         otherPositions[13] = new Vector3(1.783f, -0.652f, -6.165f); // gym room
         otherPositions[14] = new Vector3(3.159f, -0.652f, -6.165f); // gym room
         otherPositions[15] = new Vector3(2.88f, -0.65f, -4.226f); // gym room
-        otherPositions[16] = new Vector3(3.154f, -0.65f, -9.47f); // bottom jail
+        otherPositions[16] = new Vector3(-2.252f, -0.549f, -10.994f); // between boxes in power room
+        otherPositions[17] = new Vector3(-3.591f, 0.221f, 0.19f); // on tv
+        otherPositions[18] = new Vector3(2.1054f, 0.1742f, 1.7597f); // on drumset
+        otherPositions[19] = new Vector3(3.154f, -0.65f, -9.47f); // bottom jail
         hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f); //jail
         hiddenPositions[1] = new Vector3(8.788f, 0.89f, 3.016f); // safe
         SetUpObjects();
@@ -148,7 +152,7 @@ public class ObjectGrabRelease : MonoBehaviour
 
     void SetUpObjects()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             // get a random position for the keys by randomly choosing a position from the key positions array
             int randomIndex = randomIndexForKeys();
@@ -156,7 +160,7 @@ public class ObjectGrabRelease : MonoBehaviour
             // remove the position from the array so that it can't be chosen again
             keyPositions[randomIndex] = new Vector3(0, 0, 0);
         }
-        for (int i = 3; i < objectArray.Length - 2; i++)
+        for (int i = 2; i < objectArray.Length - 2; i++)
         {
             int randomIndex = randomIndexForOthers();
             objectArray[i].transform.position = otherPositions[randomIndex];
@@ -235,6 +239,7 @@ public class ObjectGrabRelease : MonoBehaviour
                 if (objectInHand.name == "JailKey" && Vector3.Distance(objectInHand.transform.position, jailDoor.transform.position) <= maxGrabDistance)
                 {
                     jailDoorOpen = true;
+                    SoundFXManager.instance.PlaySoundFXClip(keyUnlockSound, transform, 0.6f);
                     jailDoor.SetTrigger("openDoor");
                     JailObject.tag = "Interactable";
                     print("JailObject: " + JailObject.name + ", Tag: " + JailObject.tag);
@@ -242,11 +247,13 @@ public class ObjectGrabRelease : MonoBehaviour
                 else if (objectInHand.name == "BasementKey" && Vector3.Distance(objectInHand.transform.position, basementDoor.transform.position) <= maxGrabDistance)
                 {
                     basementDoor.SetTrigger("openDoor");
+                    SoundFXManager.instance.PlaySoundFXClip(keyUnlockSound, transform, 0.6f);
                     isBasementDoorOpen = true;
                 }
                 else if (objectInHand.name == "SafeKey" && Vector3.Distance(objectInHand.transform.position, safeDoor.transform.position) <= maxGrabDistance)
                 {
                     safeOpen = true;
+                    SoundFXManager.instance.PlaySoundFXClip(keyUnlockSound, transform, 0.6f);
                     safeDoor.SetTrigger("openDoor");
                     SafeObject.tag = "Interactable";
                     print("SafeObject: " + SafeObject.name + ", Tag: " + SafeObject.tag);
@@ -353,6 +360,7 @@ public class ObjectGrabRelease : MonoBehaviour
         arrow.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         arrow.transform.localPosition = new Vector3(0, 0, -.5f);
         arrow.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        arrow.tag = "NonInteractable";
     }
 
     IEnumerator findEnemy()

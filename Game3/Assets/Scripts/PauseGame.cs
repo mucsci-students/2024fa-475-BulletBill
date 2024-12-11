@@ -50,22 +50,27 @@ public class PauseGame : MonoBehaviour
     {
         // Reset player elements if necessary and set time and UI properly
         SceneManager.LoadScene("Main");
+        isPaused = false;
+        isGameOver = false;
         Time.timeScale = 1;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
+        CrosshairUI.SetActive(true);
         PauseMenuUI.SetActive(false);
         GameOverUI.SetActive(false);
     }
 
     public void Quit()
     {
-        Debug.Log("Quitting Game...");
+        //Debug.Log("Quitting Game...");
         Application.Quit();
     }
 
     public void TitleScreen()
     {
         SceneManager.LoadScene("Title Screen");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()

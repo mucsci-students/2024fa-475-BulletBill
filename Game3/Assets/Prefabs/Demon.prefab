@@ -123,8 +123,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 2, z: 2.5}
-  m_Center: {x: -0.3, y: 1.2, z: 1}
+  m_Size: {x: 3.9914012, y: 1.9999999, z: 3.6672719}
+  m_Center: {x: -0.28217927, y: 1.2, z: 1.5836356}
 --- !u!114 &4610732542379181713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,9 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script: {fileID: 8887648884222271311}
   pauseScript: {fileID: 0}
-  health: 2
-  Damage1: {fileID: 0}
-  Damage2: {fileID: 0}
+  healthScript: {fileID: 0}
+  damage: 1
 --- !u!1001 &2955494773705057654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,7 +272,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.5
+  m_Speed: 0.6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -373,7 +372,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2224071304703088997, guid: 2524633620b19d141a0313faf5df3f17, type: 2}
   m_audioClip: {fileID: 8300000, guid: d7a711ba3d8d98543abecfcee3cb3821, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 1
   Mute: 0

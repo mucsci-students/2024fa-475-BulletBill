@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class redToGreenLight : MonoBehaviour
 {
+    [SerializeField] public AudioClip electricitySound;
     public ObjectGrabRelease script;
     public GameObject hiddenLever;
     public GameObject basementRedLight;
@@ -11,11 +12,6 @@ public class redToGreenLight : MonoBehaviour
     public GameObject exitRedLight;
     public GameObject exitGreenLight;
     public GameObject box;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,7 +27,8 @@ public class redToGreenLight : MonoBehaviour
                 exitGreenLight.SetActive(true);
                 script.objectInHand.transform.parent = null;
                 script.objectInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                script.objectInHand.transform.position = new Vector3(0, -30, 0);
+                script.objectInHand.transform.position = new Vector3(3.25f, 0.377f, -10.734f);
+                SoundFXManager.instance.PlaySoundFXClip(electricitySound, transform, 0.4f);
                 script.objectInHand = null;
                 PlayerPrefs.SetInt("ElectricityOn", 1);
             }

@@ -16,6 +16,10 @@ public class MainMenuUI : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Main");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        PauseGame.isPaused = false;
+        PauseGame.isGameOver = false;
     }
 
     void Awake()

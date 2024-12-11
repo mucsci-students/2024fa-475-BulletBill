@@ -23,7 +23,8 @@ public class MoveV2 : MonoBehaviour
     }
     void Update()
     {
-        if (!PauseGame.isPaused) {
+        if (!PauseGame.isPaused && !PauseGame.isGameOver) 
+        {
             MyInput();
             ControlDrag();
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
@@ -49,7 +50,7 @@ public class MoveV2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!PauseGame.isPaused)
+        if (!PauseGame.isPaused && !PauseGame.isGameOver)
         {
             if (!onStairs)
             MovePlayer();

@@ -42,7 +42,7 @@ public class EnemySpawn : MonoBehaviour
                 }
                 else
                 {
-                    currentLocation = Traversal[Random.Range(0, 20)];
+                    currentLocation = Traversal[Random.Range(0, 21)];
                 }
                     
                 //Debug.Log(currentLocation);
@@ -65,7 +65,7 @@ public class EnemySpawn : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 20f)
             {
-                hitTaser = false;
+                hitArrow = false;
                 respawn();
                 timer = 0f;
             }
@@ -78,16 +78,14 @@ public class EnemySpawn : MonoBehaviour
             clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 4)], Quaternion.identity);
             currentLocation = Traversal[Random.Range(0, 15)];
             clone.GetComponent<EnemyControl>().target = currentLocation;
-            //clone.GetComponent<EnemyControl>().target = Player;
             clone.GetComponent<HitByArrow>().script = ShootArrowScript;
             clone.GetComponent<HitByArrow>().enemyScript = EnemySpawnScript;
         }
         else
         {
             clone = Instantiate(Demon, SpawnLocations[Random.Range(0, 6)], Quaternion.identity);
-            currentLocation = Traversal[Random.Range(0, 20)];
+            currentLocation = Traversal[Random.Range(0, 21)];
             clone.GetComponent<EnemyControl>().target = currentLocation;
-            //clone.GetComponent<EnemyControl>().target = Player;
             clone.GetComponent<HitByArrow>().script = ShootArrowScript;
             clone.GetComponent<HitByArrow>().enemyScript = EnemySpawnScript;
         }

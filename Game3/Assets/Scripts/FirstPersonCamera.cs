@@ -19,7 +19,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     void Update()
     {
-        if (!PauseGame.isPaused)
+        if (!PauseGame.isPaused && !PauseGame.isGameOver)
         {
             // Collect mouse input
             float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;

@@ -76,6 +76,7 @@ public class ShootArrow : MonoBehaviour
         //arrow.transform.rotation = Quaternion.LookRotation(rb.velocity);
         rb.velocity = fpsCam.transform.forward * arrowSpeed;
         hasArrowBeenFired = true;
+        arrow.tag = "Interactable";
         script.crossBowLoaded = false;
     }
 

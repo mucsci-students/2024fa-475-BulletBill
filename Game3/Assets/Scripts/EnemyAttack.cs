@@ -6,14 +6,16 @@ public class EnemyAttack : MonoBehaviour
 {
     public EnemyControl script;
     public PauseGame pauseScript;
-    public int health = 2; //(3 hits, 3rd kills)
-    private int damage = 1;
-    public GameObject Damage1;
-    public GameObject Damage2;
+    public PlayerHealth healthScript;
+    public int damage = 1;
+    private float timer = 0f;
+    // public GameObject Damage1;
+    // public GameObject Damage2;
     void Start()
     {
-        Damage1 = GameObject.FindGameObjectWithTag("UI1");
-        Damage2 = GameObject.FindGameObjectWithTag("UI2");
+        // Damage1 = GameObject.FindGameObjectWithTag("UI1");
+        // Damage2 = GameObject.FindGameObjectWithTag("UI2");
+        healthScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         pauseScript = GameObject.Find("GameManager").GetComponent<PauseGame>();
     }
     void OnTriggerEnter(Collider other)
@@ -24,18 +26,9 @@ public class EnemyAttack : MonoBehaviour
             script.isWalk = false;
             StartCoroutine(attack());
             script.anim.SetTrigger("attackTrigger");
-            if (health > 0)
+            if (healthScript.playerHealth > 0)
             {
-                health -= damage;
-                if (health == 1)
-                {
-                    Damage1.SetActive(true);
-                }
-                else if (health == 0)
-                {
-                    Damage1.SetActive(true);
-                    Damage2.SetActive(true);
-                }
+                healthScript.changeHealth(damage);
             }
             else
             {
@@ -44,11 +37,43 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            timer += Time.deltaTime;
+            if (timer >= 1.5f)
+            {
+                script.anim.SetBool("canWalk", false);
+                script.isWalk = false;
+                StartCoroutine(attack());
+                script.anim.SetTrigger("attackTrigger");
+                if (healthScript.playerHealth > 0)
+                {
+                    healthScript.changeHealth(damage);
+                }
+                else
+                {
+                    pauseScript.GameOver();
+                }
+                timer = 0f;
+            }
+            
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        { 
+            timer = 0f;
+        }
+    }
+
     IEnumerator attack()
     {
         yield return new WaitForSeconds(1f);
         script.anim.SetBool("canWalk", true);
         script.isWalk = true;
-
     }
 }

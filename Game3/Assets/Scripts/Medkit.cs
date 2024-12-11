@@ -8,7 +8,8 @@ public class Medkit : MonoBehaviour
     public ObjectGrabRelease script;
     public GameObject enemy;
     public GameObject medkit;
-    public EnemyAttack attackScript;
+    //public EnemyAttack attackScript;
+    public PlayerHealth healthScript;
     private GUIStyle medkitStyle;
     void Start()
     {
@@ -32,7 +33,7 @@ public class Medkit : MonoBehaviour
         // Adjust padding or other properties as needed
         medkitStyle.padding = new RectOffset(10, 10, 10, 10);
 
-        StartCoroutine (findEnemy());
+        //StartCoroutine (findEnemy());
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Medkit : MonoBehaviour
         {
             if (script.objectInHand.name == "Medkit" && Input.GetButtonDown("Fire1"))
             {
-                attackScript.health = 3;
+                healthScript.heal();
                 script.objectInHand.transform.parent = null;
                 script.objectInHand = null;
                 medkit.transform.position = new Vector3(1.5f, 0.377f, -10.734f);
@@ -52,12 +53,12 @@ public class Medkit : MonoBehaviour
         }
     }
 
-    IEnumerator findEnemy()
-    {
-        yield return new WaitForSeconds (2f);
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        attackScript = enemy.transform.GetChild(3).GetComponent<EnemyAttack>();
-    }
+    // IEnumerator findEnemy()
+    // {
+    //     yield return new WaitForSeconds (2f);
+    //     enemy = GameObject.FindGameObjectWithTag("Enemy");
+    //     attackScript = enemy.transform.GetChild(3).GetComponent<EnemyAttack>();
+    // }
 
     void OnGUI()
     {
