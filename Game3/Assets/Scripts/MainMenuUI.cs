@@ -20,6 +20,7 @@ public class MainMenuUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         PauseGame.isPaused = false;
         PauseGame.isGameOver = false;
+        PauseGame.isWin = false;
     }
 
     void Awake()

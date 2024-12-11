@@ -13,13 +13,13 @@ public class FirstPersonCamera : MonoBehaviour
     {
         // Lock and hide the cursor
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 
     void Update()
     {
-        if (!PauseGame.isPaused && !PauseGame.isGameOver)
+        if (!PauseGame.isPaused && !PauseGame.isGameOver && !PauseGame.isWin)
         {
             // Collect mouse input
             float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;

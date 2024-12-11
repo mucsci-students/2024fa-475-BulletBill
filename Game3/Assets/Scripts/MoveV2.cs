@@ -23,7 +23,7 @@ public class MoveV2 : MonoBehaviour
     }
     void Update()
     {
-        if (!PauseGame.isPaused && !PauseGame.isGameOver) 
+        if (!PauseGame.isPaused && !PauseGame.isGameOver&& !PauseGame.isWin) 
         {
             MyInput();
             ControlDrag();
@@ -50,7 +50,7 @@ public class MoveV2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!PauseGame.isPaused && !PauseGame.isGameOver)
+        if (!PauseGame.isPaused && !PauseGame.isGameOver && !PauseGame.isWin)
         {
             if (!onStairs)
             MovePlayer();

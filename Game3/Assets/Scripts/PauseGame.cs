@@ -10,11 +10,24 @@ public class PauseGame : MonoBehaviour
     public Camera cam;
     public static bool isPaused = false;
     public static bool isGameOver = false;
+    public static bool isWin = false;
+    public GameObject enemy;
     public GameObject PauseMenuUI;
     public GameObject GameOverUI;
+    public GameObject WinUI;
     public GameObject CrosshairUI;
 
     // public GameObject[] player;
+    public void Win()
+    {
+        isWin = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemy.SetActive(false);
+        CrosshairUI.SetActive(false);
+        WinUI.SetActive(true);
+    }
     public void GameOver()
     {
         isGameOver = true;
@@ -32,6 +45,7 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            CrosshairUI.SetActive(false);
             PauseMenuUI.SetActive(true);
             isPaused = true;
         }
@@ -41,6 +55,7 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 1;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            CrosshairUI.SetActive(true);
             PauseMenuUI.SetActive(false);
             isPaused = false;
         }

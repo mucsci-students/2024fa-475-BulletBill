@@ -6017,6 +6017,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 750710733}
   m_SourcePrefab: {fileID: 100100000, guid: 9f9cd54077faf65438d05b189cdde7f5, type: 3}
+--- !u!1 &276960166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4775147448187227187, guid: e66e42299379c3d4f9111e9f6ca4ca1f, type: 3}
+  m_PrefabInstance: {fileID: 289314730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &281428197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c2962fd89b995f429f457792df40dfd, type: 3}
@@ -17923,6 +17928,7 @@ MonoBehaviour:
   - {fileID: 304410150}
   - {fileID: 1291804645}
   - {fileID: 1240032291}
+  pauseScript: {fileID: 1742007785}
   enemy: {fileID: 0}
   seeScript: {fileID: 0}
   enemyScript: {fileID: 1929368455}
@@ -20386,7 +20392,6 @@ GameObject:
   - component: {fileID: 1095591319}
   - component: {fileID: 1095591321}
   - component: {fileID: 1095591320}
-  - component: {fileID: 1095591322}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -20453,20 +20458,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095591318}
   m_CullTransparentMesh: 1
---- !u!114 &1095591322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095591318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b46b03d868558714492773b59fc5d51c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTime: 0
-  timerText: {fileID: 1483781263}
 --- !u!1 &1097527165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b373fdc51b0cf984da0c6f9d88cd1854, type: 3}
@@ -29881,6 +29872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1618024647}
+  - component: {fileID: 1618024648}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -29903,6 +29895,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618024648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618024646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46b03d868558714492773b59fc5d51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  timerText: {fileID: 1483781263}
 --- !u!1 &1619836536
 GameObject:
   m_ObjectHideFlags: 0
@@ -32135,8 +32141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  enemy: {fileID: 0}
   PauseMenuUI: {fileID: 289314731}
   GameOverUI: {fileID: 1372732357}
+  WinUI: {fileID: 276960166}
   CrosshairUI: {fileID: 338029664}
 --- !u!4 &1742007786
 Transform:

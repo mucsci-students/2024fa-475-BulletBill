@@ -13,11 +13,11 @@ public class TimeToEscape : MonoBehaviour
 
     void Update()
     {
-        if (!PauseGame.isPaused)
+        if (!PauseGame.isPaused && !PauseGame.isWin)
         {
             currentTime += Time.deltaTime;
-            string formattedTime = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(currentTime / 60), Mathf.FloorToInt(currentTime % 60));
-            timerText.text = formattedTime;
-        }
+        }    
+        string formattedTime = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(currentTime / 60), Mathf.FloorToInt(currentTime % 60));
+        timerText.text = formattedTime;
     }
 }

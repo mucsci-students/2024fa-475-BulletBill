@@ -33,6 +33,7 @@ public class ObjectGrabRelease : MonoBehaviour
 
     private GameObject JailObject;
     private GameObject SafeObject;
+    public PauseGame pauseScript;
     //private bool basementDoorOpen = false;
     private bool jailDoorOpen = false;
     private bool safeOpen = false;
@@ -288,7 +289,8 @@ public class ObjectGrabRelease : MonoBehaviour
                 else if (objectInHand.name == "EscapeKey" && Vector3.Distance(escapeDoor.transform.position, transform.position) <= maxGrabDistance && planksOffBool)
                 {
                     print("Opening escape door");
-                    escapeDoor.SetActive(false);
+                    pauseScript.Win();
+                    //escapeDoor.SetActive(false);
                 }
                 throwObject();
                 updateHeldObject();
