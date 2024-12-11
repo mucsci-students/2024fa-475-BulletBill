@@ -7,8 +7,9 @@ using System.Net.NetworkInformation;
 
 public class PauseGame : MonoBehaviour
 {
-
+    public Camera cam;
     public static bool isPaused = false;
+    public static bool isGameOver = false;
     public GameObject PauseMenuUI;
     public GameObject GameOverUI;
     public GameObject CrosshairUI;
@@ -16,6 +17,9 @@ public class PauseGame : MonoBehaviour
     // public GameObject[] player;
     public void GameOver()
     {
+        isGameOver = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         GameOverUI.SetActive(true);
         CrosshairUI.SetActive(false);
     }
@@ -45,10 +49,12 @@ public class PauseGame : MonoBehaviour
     public void Restart()
     {
         // Reset player elements if necessary and set time and UI properly
+        SceneManager.LoadScene("Main");
         Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
         PauseMenuUI.SetActive(false);
         GameOverUI.SetActive(false);
-        SceneManager.LoadScene("Main");
     }
 
     public void Quit()

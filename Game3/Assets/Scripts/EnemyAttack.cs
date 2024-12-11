@@ -5,8 +5,13 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public EnemyControl script;
+    public PauseGame pasueScript;
     public int health = 3; //(3 hits, 3rd kills)
     private int damage = 1;
+    void Start()
+    {
+        pasueScript = GameObject.Find("GameManager").GetComponent<PauseGame>();
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -18,7 +23,7 @@ public class EnemyAttack : MonoBehaviour
             //Debug.Log("Test Pass");
             if (health == 0)
             {
-                //player=dead
+                pasueScript.GameOver();
             }
             else if (health > 0)
             {
