@@ -26,11 +26,11 @@ public class ObjectGrabRelease : MonoBehaviour
     public Camera[] cameraArray = new Camera[12];
     private Camera closestCamera;
     private float maxGrabDistance = 0.8f;
-    private Vector3[] keyPositions = new Vector3[4];
+    private Vector3[] keyPositions = new Vector3[8];
     private Vector3[] otherPositions = new Vector3[17];
-    private Vector3[] hiddenPositions = new Vector3[3];
+    private Vector3[] hiddenPositions = new Vector3[2];
 
-    private GameObject[] JailObjects = new GameObject[2];
+    private GameObject JailObject;
     private GameObject SafeObject;
     private bool basementDoorOpen = false;
     private bool jailDoorOpen = false;
@@ -55,6 +55,11 @@ public class ObjectGrabRelease : MonoBehaviour
         keyPositions[0] = new Vector3(7.508f, 0.986f, 0.8f);
         keyPositions[1] = new Vector3(-.844f, 0.2172f, 1.317f);
         keyPositions[2] = new Vector3(-2.65f, 0.215f, 0.382f);
+        keyPositions[3] = new Vector3(9.6585f, 0.986f, 2.6516f);
+        keyPositions[4] = new Vector3(8.725f, 8.7766f, 2.66f);
+        keyPositions[5] = new Vector3(10.334f, 8.7766f, 2.66f);
+        keyPositions[6] = new Vector3(3.616f, 0.2217f, 0.6015f);
+        keyPositions[7] = new Vector3(3.01f, 0.2164f, 1.5824f);
         otherPositions[0] = new Vector3(4.719f, 1.065f, -1.963f);
         otherPositions[1] = new Vector3(5.351f, 0.876f, 1.93f);
         otherPositions[2] = new Vector3(11.005f, 1, -2.948f);
@@ -74,7 +79,6 @@ public class ObjectGrabRelease : MonoBehaviour
         otherPositions[16] = new Vector3(3.154f, -0.65f, -9.47f);
         hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
         hiddenPositions[1] = new Vector3(8.788f, 0.89f, 3.016f);
-        hiddenPositions[2] = new Vector3(3.097f, -0.712f, -7.662f);
         SetUpObjects();
 
         // Initialize the style
@@ -152,19 +156,7 @@ public class ObjectGrabRelease : MonoBehaviour
             // remove the position from the array so that it can't be chosen again
             keyPositions[randomIndex] = new Vector3(0, 0, 0);
         }
-        int randomIndexForEscapeKey = randomIndexForHidden();
-        objectArray[3].transform.position = hiddenPositions[randomIndexForEscapeKey];
-        // remove the position from the array so that it can't be chosen again
-        hiddenPositions[randomIndexForEscapeKey] = new Vector3(0, 0, 0);
-        if (randomIndexForEscapeKey == 0 || randomIndexForEscapeKey == 2)
-        {
-            JailObjects[0] = objectArray[3];
-        }
-        else
-        {
-            SafeObject = objectArray[3];
-        }
-        for (int i = 4; i < objectArray.Length - 2; i++)
+        for (int i = 3; i < objectArray.Length - 2; i++)
         {
             int randomIndex = randomIndexForOthers();
             objectArray[i].transform.position = otherPositions[randomIndex];
@@ -177,9 +169,9 @@ public class ObjectGrabRelease : MonoBehaviour
             objectArray[i].transform.position = hiddenPositions[randomIndex];
             // remove the position from the array so that it can't be chosen again
             hiddenPositions[randomIndex] = new Vector3(0, 0, 0);
-            if (randomIndex == 0 || randomIndexForEscapeKey == 2)
+            if (randomIndex == 0 || randomIndex == 2)
             {
-                JailObjects[1] = objectArray[i];
+                JailObject = objectArray[i];
             }
             else
             {
@@ -244,10 +236,8 @@ public class ObjectGrabRelease : MonoBehaviour
                 {
                     jailDoorOpen = true;
                     jailDoor.SetTrigger("openDoor");
-                    JailObjects[0].tag = "Interactable";
-                    print("JailObjects[0]: " + JailObjects[0].name + ", Tag: " + JailObjects[0].tag);
-                    JailObjects[1].tag = "Interactable";
-                    print("JailObjects[1]: " + JailObjects[1].name + ", Tag: " + JailObjects[1].tag);
+                    JailObject.tag = "Interactable";
+                    print("JailObject: " + JailObject.name + ", Tag: " + JailObject.tag);
                 }
                 else if (objectInHand.name == "BasementKey" && Vector3.Distance(objectInHand.transform.position, basementDoor.transform.position) <= maxGrabDistance)
                 {
