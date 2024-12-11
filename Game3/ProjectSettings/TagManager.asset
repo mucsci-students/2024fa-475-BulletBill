@@ -11,6 +11,8 @@ TagManager:
   - SFXManager
   - MusicManager
   - EnemySpawn
+  - UI1
+  - UI2
   layers:
   - Default
   - TransparentFX
