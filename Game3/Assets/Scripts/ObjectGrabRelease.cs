@@ -60,7 +60,7 @@ public class ObjectGrabRelease : MonoBehaviour
         keyPositions[5] = new Vector3(7.925f, 1.005f, -2.709f); // bed2
         keyPositions[6] = new Vector3(3.01f, 0.2164f, 1.5824f); // small desk
         keyPositions[7] = new Vector3(3.611f, 0.2146f, 0.6027f); // computer desk in powerbox room
-        otherPositions[0] = new Vector3(4.719f, 0.1954f, 0.7263f);
+        otherPositions[0] = new Vector3(4.1347f, 1f, 1.9884f); // upstairs bathroom towels
         otherPositions[1] = new Vector3(5.351f, 0.876f, 1.93f);
         otherPositions[2] = new Vector3(11.005f, 1, -2.948f);
         otherPositions[3] = new Vector3(-3.537f, 0.159f, 3.322f);
