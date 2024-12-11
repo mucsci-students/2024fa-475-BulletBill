@@ -270,13 +270,19 @@ public class ObjectGrabRelease : MonoBehaviour
         // change the position relative to the parent
         objectInHand.transform.localPosition = new Vector3(1.25f, 1, 1.25f);
         // change the rotation relative to the parent so that it is pointing up
-        if (objectInHand.name != "Crossbow")
+        if (objectInHand.name == "Taser")
         {
-            objectInHand.transform.localRotation = Quaternion.Euler(90, 70, 0);
+            objectInHand.transform.localRotation = Quaternion.Euler(0, 90, 0);
         }
-        else
+        else if (objectInHand.name == "Crossbow")
         {
             objectInHand.transform.localRotation = Quaternion.Euler(0, 170, 0);
+        }
+        else if (objectInHand.name == "BoltCutters")
+            objectInHand.transform.localRotation = Quaternion.Euler(90, -90, -70);
+        else
+        {
+            objectInHand.transform.localRotation = Quaternion.Euler(90, 70, 0);
         }
         objectInHand.GetComponent<BoxCollider>().enabled = false;
     }

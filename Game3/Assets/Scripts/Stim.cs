@@ -6,6 +6,7 @@ public class Stim : MonoBehaviour
 {
     public ObjectGrabRelease script;
     public GameObject canvas;
+    public GameObject stim;
     public MoveV2 moveScript;
     private float oldSpeed;
     private bool isBoosted = false;
@@ -48,8 +49,9 @@ public class Stim : MonoBehaviour
                 canvas.SetActive(true);
                 moveScript.moveSpeed = oldSpeed * 1.15f;
                 script.objectInHand.transform.parent = null;
-                script.objectInHand.SetActive(false);
                 script.objectInHand = null;
+                stim.transform.position = new Vector3(3f, 0.377f, -10.734f);
+                stim.SetActive(false);
             }
         }
 

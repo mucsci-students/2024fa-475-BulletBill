@@ -7,6 +7,7 @@ public class Medkit : MonoBehaviour
 {
     public ObjectGrabRelease script;
     public GameObject enemy;
+    public GameObject medkit;
     public EnemyAttack attackScript;
     private GUIStyle medkitStyle;
     void Start()
@@ -43,8 +44,10 @@ public class Medkit : MonoBehaviour
             {
                 attackScript.health = 3;
                 script.objectInHand.transform.parent = null;
-                script.objectInHand.SetActive(false);
                 script.objectInHand = null;
+                medkit.transform.position = new Vector3(1.5f, 0.377f, -10.734f);
+                medkit.SetActive(false);
+                
             }
         }
     }
