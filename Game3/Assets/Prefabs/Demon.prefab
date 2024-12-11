@@ -140,6 +140,8 @@ MonoBehaviour:
   script: {fileID: 8887648884222271311}
   pauseScript: {fileID: 0}
   health: 2
+  Damage1: {fileID: 0}
+  Damage2: {fileID: 0}
 --- !u!1001 &2955494773705057654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,7 +508,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
