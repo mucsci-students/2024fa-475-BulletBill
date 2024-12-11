@@ -14,17 +14,31 @@ public class ObjectGrabRelease : MonoBehaviour
     public bool isBasementDoorOpen = false;
     public GameObject objectInHand = null;
     public GameObject escapeDoor;
+    public GameObject chainsOn;
+    public GameObject chainsOff;
+    public GameObject screwsOn;
+    public GameObject screwsOff;
+    public GameObject planksOn;
+    public GameObject planksOff;
+    public GameObject yellowBox;
     private GameObject closestObject;
     public GameObject arrow;
     public Camera[] cameraArray = new Camera[12];
     private Camera closestCamera;
     private float maxGrabDistance = 0.8f;
     private Vector3[] keyPositions = new Vector3[4];
-    private Vector3[] otherPositions = new Vector3[7];
-    private Vector3[] hiddenPositions = new Vector3[2];
+    private Vector3[] otherPositions = new Vector3[17];
+    private Vector3[] hiddenPositions = new Vector3[3];
 
     private GameObject[] JailObjects = new GameObject[2];
     private GameObject SafeObject;
+    private bool basementDoorOpen = false;
+    private bool jailDoorOpen = false;
+    private bool safeOpen = false;
+    private bool chainsOffBool = false;
+    private bool screwsOffBool = false;
+    private bool planksOffBool = false;
+    private bool ElectricityOn = false;
 
     //for camera hiding
     public GameObject enemy;
@@ -35,6 +49,7 @@ public class ObjectGrabRelease : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("ElectricityOn", 0);
         objectInHand = null;
         closestObject = null;
         keyPositions[0] = new Vector3(7.508f, 0.986f, 0.8f);
@@ -47,8 +62,19 @@ public class ObjectGrabRelease : MonoBehaviour
         otherPositions[4] = new Vector3(-3.45f, 0.15f, -3.51f);
         otherPositions[5] = new Vector3(2.74f, 0.219f, -2.789f);
         otherPositions[6] = new Vector3(-3.453f, -0.711f, -8.59f);
+        otherPositions[7] = new Vector3(4.67f, 0.99f, -0.56f);
+        otherPositions[8] = new Vector3(3.37f, 0.12f, 1.03f);
+        otherPositions[9] = new Vector3(1.719f, 0.12f, 1.03f);
+        otherPositions[10] = new Vector3(-3.453f, -0.711f, -7.78f);
+        otherPositions[11] = new Vector3(-0.9f, -0.711f, -7.78f);
+        otherPositions[12] = new Vector3(-1.49f, -0.545f, -6.165f);
+        otherPositions[13] = new Vector3(1.783f, -0.652f, -6.165f);
+        otherPositions[14] = new Vector3(3.159f, -0.652f, -6.165f);
+        otherPositions[15] = new Vector3(2.88f, -0.65f, -4.226f);
+        otherPositions[16] = new Vector3(3.154f, -0.65f, -9.47f);
         hiddenPositions[0] = new Vector3(2.308f, -0.695f, -7.993f);
         hiddenPositions[1] = new Vector3(8.788f, 0.89f, 3.016f);
+        hiddenPositions[2] = new Vector3(3.097f, -0.712f, -7.662f);
         SetUpObjects();
 
         // Initialize the style
@@ -77,6 +103,10 @@ public class ObjectGrabRelease : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPrefs.GetInt("ElectricityOn") == 1)
+        {
+            ElectricityOn = true;
+        }
         updateClosestItem();
         updateClosestCamera();
         checkGrabInput();
@@ -122,7 +152,18 @@ public class ObjectGrabRelease : MonoBehaviour
             // remove the position from the array so that it can't be chosen again
             keyPositions[randomIndex] = new Vector3(0, 0, 0);
         }
-        JailObjects[0] = objectArray[3];
+        int randomIndexForEscapeKey = randomIndexForHidden();
+        objectArray[3].transform.position = hiddenPositions[randomIndexForEscapeKey];
+        // remove the position from the array so that it can't be chosen again
+        hiddenPositions[randomIndexForEscapeKey] = new Vector3(0, 0, 0);
+        if (randomIndexForEscapeKey == 0 || randomIndexForEscapeKey == 2)
+        {
+            JailObjects[0] = objectArray[3];
+        }
+        else
+        {
+            SafeObject = objectArray[3];
+        }
         for (int i = 4; i < objectArray.Length - 2; i++)
         {
             int randomIndex = randomIndexForOthers();
@@ -136,7 +177,7 @@ public class ObjectGrabRelease : MonoBehaviour
             objectArray[i].transform.position = hiddenPositions[randomIndex];
             // remove the position from the array so that it can't be chosen again
             hiddenPositions[randomIndex] = new Vector3(0, 0, 0);
-            if (randomIndex == 0)
+            if (randomIndex == 0 || randomIndexForEscapeKey == 2)
             {
                 JailObjects[1] = objectArray[i];
             }
@@ -201,6 +242,7 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 if (objectInHand.name == "JailKey" && Vector3.Distance(objectInHand.transform.position, jailDoor.transform.position) <= maxGrabDistance)
                 {
+                    jailDoorOpen = true;
                     jailDoor.SetTrigger("openDoor");
                     JailObjects[0].tag = "Interactable";
                     print("JailObjects[0]: " + JailObjects[0].name + ", Tag: " + JailObjects[0].tag);
@@ -214,6 +256,7 @@ public class ObjectGrabRelease : MonoBehaviour
                 }
                 else if (objectInHand.name == "SafeKey" && Vector3.Distance(objectInHand.transform.position, safeDoor.transform.position) <= maxGrabDistance)
                 {
+                    safeOpen = true;
                     safeDoor.SetTrigger("openDoor");
                     SafeObject.tag = "Interactable";
                     print("SafeObject: " + SafeObject.name + ", Tag: " + SafeObject.tag);
@@ -223,6 +266,32 @@ public class ObjectGrabRelease : MonoBehaviour
                     print("Loading arrow");
                     crossBowLoaded = true;
                     LoadArrow();
+                }
+                else if (objectInHand.name == "BoltCutters" && Vector3.Distance(escapeDoor.transform.position, transform.position) <= maxGrabDistance)
+                {
+                    print("Removing chains");
+                    chainsOn.SetActive(false);
+                    chainsOff.SetActive(true);
+                    chainsOffBool = true;
+                }
+                else if (objectInHand.name == "Screwdriver" && Vector3.Distance(escapeDoor.transform.position, transform.position) <= maxGrabDistance && chainsOffBool)
+                {
+                    print("Removing screws");
+                    screwsOn.SetActive(false);
+                    screwsOff.SetActive(true);
+                    screwsOffBool = true;
+                }
+                else if (objectInHand.name == "Crowbar" && Vector3.Distance(escapeDoor.transform.position, transform.position) <= maxGrabDistance && screwsOffBool)
+                {
+                    print("Removing planks");
+                    planksOn.SetActive(false);
+                    planksOff.SetActive(true);
+                    planksOffBool = true;
+                }
+                else if (objectInHand.name == "EscapeKey" && Vector3.Distance(escapeDoor.transform.position, transform.position) <= maxGrabDistance && planksOffBool)
+                {
+                    print("Opening escape door");
+                    escapeDoor.SetActive(false);
                 }
                 throwObject();
                 updateHeldObject();
@@ -315,7 +384,7 @@ public class ObjectGrabRelease : MonoBehaviour
             GUI.Box(new Rect(10, 10, 1250, 100), "Press E to pickup an object", buttonStyle);
         }
         
-        if (Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= 1.0f)
+        if (Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= maxGrabDistance)
         {
             GUI.Box(new Rect(10, 210, 1250, 100), "Items need to escape (In Order):", buttonStyle);
             GUI.Box(new Rect(10, 310, 1250, 100), "1. Bolt Cutters", buttonStyle);
@@ -323,7 +392,125 @@ public class ObjectGrabRelease : MonoBehaviour
             GUI.Box(new Rect(10, 510, 1250, 100), "3. Crowbar", buttonStyle);
             GUI.Box(new Rect(10, 610, 1250, 100), "4. Electricity Turned On (Lever)", buttonStyle);
             GUI.Box(new Rect(10, 710, 1250, 100), "5. Escape Key", buttonStyle);
+
+            if (chainsOffBool)
+            {
+                if (screwsOffBool)
+                {
+                    if (planksOffBool)
+                    {
+                        if (ElectricityOn)
+                        {
+                            if (objectInHand == null || objectInHand.name != "EscapeKey")
+                            {
+                                GUI.Box(new Rect(10, 810, 1400, 100), "Escape Key needed to escape", buttonStyle);
+                            }
+                            else if (objectInHand.name == "EscapeKey")
+                            {
+                                GUI.Box(new Rect(10, 810, 1400, 100), "Press E to escape", buttonStyle);
+                            }
+                        }
+                        else
+                        {
+                            GUI.Box(new Rect(10, 810, 1400, 100), "Electricity needed to escape", buttonStyle);
+                        }
+                    }
+                    else
+                    {
+                        if (objectInHand == null || objectInHand.name != "Crowbar")
+                        {
+                            GUI.Box(new Rect(10, 810, 1400, 100), "Crowbar needed to remove planks", buttonStyle);
+                        }
+                        else if (objectInHand.name == "Crowbar")
+                        {
+                            GUI.Box(new Rect(10, 810, 1400, 100), "Press E to remove planks", buttonStyle);
+                        }
+                    }
+                }
+                else
+                {
+                    if (objectInHand == null || objectInHand.name != "Screwdriver")
+                    {
+                        GUI.Box(new Rect(10, 810, 1400, 100), "Screwdriver needed to remove screws", buttonStyle);
+                    }
+                    else if (objectInHand.name == "Screwdriver")
+                    {   
+                        GUI.Box(new Rect(10, 810, 1400, 100), "Press E to remove screws", buttonStyle);
+                    }
+                }
+            }
+            else
+            {
+                if (objectInHand == null || objectInHand.name != "BoltCutters")
+                {
+                    GUI.Box(new Rect(10, 810, 1400, 100), "Bolt Cutters needed to remove chains", buttonStyle);
+                }
+                else if (objectInHand.name == "BoltCutters")
+                {   
+                    GUI.Box(new Rect(10, 810, 1400, 100), "Press E to remove chains", buttonStyle);
+                }
+            }
         }
+
+        if (!isBasementDoorOpen)
+        {
+            if (Vector3.Distance(player.transform.position, basementDoor.transform.position) <= 1.0f)
+            {
+                if (objectInHand == null || objectInHand.name != "BasementKey")
+                {
+                    GUI.Box(new Rect(10, 210, 1250, 100), "Basement Key needed to unlock", buttonStyle);
+                }
+                else if (objectInHand.name == "BasementKey")
+                {
+                    GUI.Box(new Rect(10, 210, 1350, 100), "Press E to open the basement door", buttonStyle);
+                }
+            }
+        }
+
+        if (!jailDoorOpen)
+        {
+            if (Vector3.Distance(player.transform.position, jailDoor.transform.position) <= 1.0f)
+            {
+                if (objectInHand == null || objectInHand.name != "JailKey")
+                {
+                    GUI.Box(new Rect(10, 310, 1250, 100), "Jail Key needed to unlock", buttonStyle);
+                }
+                else if (objectInHand.name == "JailKey")
+                {
+                    GUI.Box(new Rect(10, 310, 1350, 100), "Press E to open the jail door", buttonStyle);
+                }
+            }
+        }
+
+        if (!safeOpen)
+        {
+            if (Vector3.Distance(player.transform.position, safeDoor.transform.position) <= 1.0f)
+            {
+                if (objectInHand == null || objectInHand.name != "SafeKey")
+                {
+                    GUI.Box(new Rect(10, 410, 1250, 100), "Safe Key needed to unlock", buttonStyle);
+                }
+                else if (objectInHand.name == "SafeKey")
+                {
+                    GUI.Box(new Rect(10, 410, 1350, 100), "Press E to open the safe", buttonStyle);
+                }
+            }
+        }
+
+        if (!ElectricityOn)
+        {
+            if (Vector3.Distance(player.transform.position, yellowBox.transform.position) <= 1.0f)
+            {
+                if (objectInHand == null || objectInHand.name != "Lever")
+                {
+                    GUI.Box(new Rect(10, 410, 1250, 100), "Lever Needed to turn on", buttonStyle);
+                }
+                else if (objectInHand.name == "Lever")
+                {
+                    GUI.Box(new Rect(10, 410, 1350, 100), "Click to turn on the electricity", buttonStyle);
+                }
+            }
+        } 
 
         if (Vector3.Distance(player.transform.position, closestCamera.transform.position) <= maxGrabDistance && closestCamera != null)
         {

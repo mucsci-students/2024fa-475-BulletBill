@@ -13129,15 +13129,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3570900bf70876d43940df97dd280dea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.453
+      value: 3.154
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3570900bf70876d43940df97dd280dea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.711
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3570900bf70876d43940df97dd280dea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.59
+      value: -9.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3570900bf70876d43940df97dd280dea, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16255,7 +16255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &899773254
 Transform:
   m_ObjectHideFlags: 0
@@ -17745,6 +17745,13 @@ MonoBehaviour:
   isBasementDoorOpen: 0
   objectInHand: {fileID: 0}
   escapeDoor: {fileID: 2119429873}
+  chainsOn: {fileID: 2012708507}
+  chainsOff: {fileID: 1869171857}
+  screwsOn: {fileID: 1747275865}
+  screwsOff: {fileID: 732518112}
+  planksOn: {fileID: 260690860}
+  planksOff: {fileID: 2011472577}
+  yellowBox: {fileID: 341722226}
   arrow: {fileID: 1649121911}
   cameraArray:
   - {fileID: 2129165782}

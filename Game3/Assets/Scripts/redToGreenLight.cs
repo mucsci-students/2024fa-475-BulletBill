@@ -33,6 +33,7 @@ public class redToGreenLight : MonoBehaviour
                 script.objectInHand.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 script.objectInHand.transform.position = new Vector3(0, -30, 0);
                 script.objectInHand = null;
+                PlayerPrefs.SetInt("ElectricityOn", 1);
             }
         }
         
