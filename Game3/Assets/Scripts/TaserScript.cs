@@ -102,7 +102,7 @@ public class TaserScript : MonoBehaviour
         }
         if (isHit)
         {
-            GUI.Box(new Rect(1200, 800, 1500, 100), "Enemy hit! Respawning in 15 seconds", taserStyle);
+            GUI.Box(new Rect(1200, 1100, 1500, 100), "Enemy hit! Respawning in 15 seconds", taserStyle);
         }
     }
 }

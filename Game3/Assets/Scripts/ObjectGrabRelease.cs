@@ -18,7 +18,7 @@ public class ObjectGrabRelease : MonoBehaviour
     public GameObject arrow;
     public Camera[] cameraArray = new Camera[12];
     private Camera closestCamera;
-    private float maxGrabDistance = 1.0f;
+    private float maxGrabDistance = 0.8f;
     private Vector3[] keyPositions = new Vector3[4];
     private Vector3[] otherPositions = new Vector3[7];
     private Vector3[] hiddenPositions = new Vector3[2];
