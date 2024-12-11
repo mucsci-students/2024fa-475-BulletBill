@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
     public void changeHealth(int damage)
     {
         playerHealth -= damage;
-        SoundFXManager.instance.PlaySoundFXClip(hurtSound, transform, 0.25f);
+        SoundFXManager.instance.PlaySoundFXClip(hurtSound, transform, 0.2f);
 
         if (playerHealth == 2)
         {
