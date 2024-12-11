@@ -52,15 +52,15 @@ public class ObjectGrabRelease : MonoBehaviour
         PlayerPrefs.SetInt("ElectricityOn", 0);
         objectInHand = null;
         closestObject = null;
-        keyPositions[0] = new Vector3(7.508f, 0.986f, 0.8f);
-        keyPositions[1] = new Vector3(-.844f, 0.2172f, 1.317f);
-        keyPositions[2] = new Vector3(-2.65f, 0.215f, 0.382f);
-        keyPositions[3] = new Vector3(9.6585f, 0.986f, 2.6516f);
-        keyPositions[4] = new Vector3(8.725f, 8.7766f, 2.66f);
-        keyPositions[5] = new Vector3(10.334f, 8.7766f, 2.66f);
-        keyPositions[6] = new Vector3(3.616f, 0.2217f, 0.6015f);
-        keyPositions[7] = new Vector3(3.01f, 0.2164f, 1.5824f);
-        otherPositions[0] = new Vector3(4.719f, 1.065f, -1.963f);
+        keyPositions[0] = new Vector3(7.508f, 0.986f, 0.8f); // master bedroom table
+        keyPositions[1] = new Vector3(-.844f, 0.2172f, 1.317f); // living room desk
+        keyPositions[2] = new Vector3(-2.65f, 0.215f, 0.382f); // couch table
+        keyPositions[3] = new Vector3(9.6585f, 0.986f, 2.6516f); //master bed
+        keyPositions[4] = new Vector3(4.781f, 1.005f, -3.776f); // bed1
+        keyPositions[5] = new Vector3(7.925f, 1.005f, -2.709f); // bed2
+        keyPositions[6] = new Vector3(3.01f, 0.2164f, 1.5824f); // small desk
+        keyPositions[7] = new Vector3(3.611f, 0.2146f, 0.6027f); // computer desk in powerbox room
+        otherPositions[0] = new Vector3(4.719f, 0.1954f, 0.7263f);
         otherPositions[1] = new Vector3(5.351f, 0.876f, 1.93f);
         otherPositions[2] = new Vector3(11.005f, 1, -2.948f);
         otherPositions[3] = new Vector3(-3.537f, 0.159f, 3.322f);
