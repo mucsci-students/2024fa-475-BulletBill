@@ -296,6 +296,13 @@ public class ObjectGrabRelease : MonoBehaviour
                 updateHeldObject();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (objectInHand == null)
+            {
+                pauseScript.Win();
+            }
+        }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             if (objectInHand != null)
@@ -384,7 +391,7 @@ public class ObjectGrabRelease : MonoBehaviour
             GUI.Box(new Rect(10, 10, 700, 50), "Press E to pickup an object", buttonStyle);
         }
         
-        if (Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= maxGrabDistance)
+        if ((Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= maxGrabDistance) && !PauseGame.isWin)
         {
             GUI.Box(new Rect(10, 110, 700, 50), "Items need to escape (In Order):", buttonStyle);
             GUI.Box(new Rect(10, 160, 700, 50), "1. Bolt Cutters", buttonStyle);
