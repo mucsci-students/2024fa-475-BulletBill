@@ -35,7 +35,7 @@ public class TaserScript : MonoBehaviour
         taserStyle.normal.background = blackTexture;
 
         // Adjust font size if needed
-        taserStyle.fontSize = 75;
+        taserStyle.fontSize = 35;
 
         // Adjust padding or other properties as needed
         taserStyle.padding = new RectOffset(10, 10, 10, 10);
@@ -93,16 +93,16 @@ public class TaserScript : MonoBehaviour
         {
             if (timer < 30f)
             {
-                GUI.Box(new Rect(2700, 10, 1250, 100), "Taser Cooldown: " + timer.ToString("F2"), taserStyle);
+                GUI.Box(new Rect(1300, 10, 800, 50), "Taser Cooldown: " + timer.ToString("F2"), taserStyle);
             }
             else
             {
-                GUI.Box(new Rect(2700, 10, 1250, 100), "Taser Ready! Click to Shoot!", taserStyle);
+                GUI.Box(new Rect(1300, 10, 800, 50), "Taser Ready! Click to Shoot!", taserStyle);
             }
         }
         if (isHit)
         {
-            GUI.Box(new Rect(1200, 1100, 1500, 100), "Enemy hit! Respawning in 15 seconds", taserStyle);
+            GUI.Box(new Rect(575, 500, 800, 50), "Enemy hit! Respawning in 15 seconds", taserStyle);
         }
     }
 }

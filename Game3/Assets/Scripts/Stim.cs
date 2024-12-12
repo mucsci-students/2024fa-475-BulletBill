@@ -33,7 +33,7 @@ public class Stim : MonoBehaviour
         stimStyle.normal.background = blackTexture;
 
         // Adjust font size if needed
-        stimStyle.fontSize = 75;
+        stimStyle.fontSize = 35;
 
         // Adjust padding or other properties as needed
         stimStyle.padding = new RectOffset(10, 10, 10, 10);
@@ -74,7 +74,7 @@ public class Stim : MonoBehaviour
     {
         if (script.objectInHand != null && script.objectInHand.name == "Stim")
         {
-            GUI.Box(new Rect(2400, 10, 1400, 100), "Click to inject stim for a speed boost!", stimStyle);
+            GUI.Box(new Rect(1300, 10, 800, 50), "Click to inject stim for a speed boost!", stimStyle);
         }
     }
 }

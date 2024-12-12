@@ -31,7 +31,7 @@ public class ShootArrow : MonoBehaviour
         crossbowStyle.normal.background = blackTexture;
 
         // Adjust font size if needed
-        crossbowStyle.fontSize = 75;
+        crossbowStyle.fontSize = 35;
 
         // Adjust padding or other properties as needed
         crossbowStyle.padding = new RectOffset(10, 10, 10, 10);
@@ -86,16 +86,16 @@ public class ShootArrow : MonoBehaviour
         {
             if (script.crossBowLoaded)
             {
-                GUI.Box(new Rect(2550, 10, 1300, 100), "Crossbow is loaded. Click to fire!", crossbowStyle);
+                GUI.Box(new Rect(1300, 10, 800, 50), "Crossbow is loaded. Click to fire!", crossbowStyle);
             }
             else
             {
-                GUI.Box(new Rect(2550, 10, 1300, 100), "Requires arrow to be loaded to fire", crossbowStyle);
+                GUI.Box(new Rect(1300, 10, 800, 50), "Requires arrow to be loaded to fire", crossbowStyle);
             }
         }   
         if (isHit)
         {
-            GUI.Box(new Rect(1200, 1100, 1500, 100), "Enemy hit! Respawning in 20 seconds", crossbowStyle);
+            GUI.Box(new Rect(575, 500, 800, 50), "Enemy hit! Respawning in 20 seconds", crossbowStyle);
         }
     }
 }

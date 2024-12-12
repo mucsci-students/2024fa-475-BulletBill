@@ -28,7 +28,7 @@ public class Medkit : MonoBehaviour
         medkitStyle.normal.background = blackTexture;
 
         // Adjust font size if needed
-        medkitStyle.fontSize = 75;
+        medkitStyle.fontSize = 35;
 
         // Adjust padding or other properties as needed
         medkitStyle.padding = new RectOffset(10, 10, 10, 10);
@@ -64,7 +64,7 @@ public class Medkit : MonoBehaviour
     {
         if (script.objectInHand != null && script.objectInHand.name == "Medkit")
         {
-            GUI.Box(new Rect(2500, 10, 1250, 100), "Click to use medkit to heal", medkitStyle);
+            GUI.Box(new Rect(1300, 10, 800, 50), "Click to use medkit to heal", medkitStyle);
         }
     }
 }
