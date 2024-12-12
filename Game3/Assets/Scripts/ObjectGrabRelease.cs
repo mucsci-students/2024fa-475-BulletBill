@@ -296,13 +296,6 @@ public class ObjectGrabRelease : MonoBehaviour
                 updateHeldObject();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (objectInHand == null)
-            {
-                pauseScript.Win();
-            }
-        }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             if (objectInHand != null)
