@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Useful Knowledge to Know
+  m_text: Game Instructions
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2776,33 +2776,34 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1. Use "wasd" to move the character around, but you cannot jump
+  m_text: '1. Use "wasd" to move the character around, "esc" to pause the game, but
+    you cannot jump
 
-    2.
-    Press "e" to pick objects up and "q" to throw them
+    2. Press "e" to pick objects up and "q" to throw them
 
-    3. Use your mouse to
-    change where the player is looking
+    3.
+    Use your mouse to change where the player is looking
 
-    4. You can hide in certain objects by
-    pressing the "r" key when prompted
+    4. You can hide in
+    certain objects by pressing the "r" key when prompted
 
-    5. The closer you get to the enemy, the
-    more intense the music plays
+    5. The closer you
+    get to the enemy, the more intense the music plays
 
-    6. The enemy wanders to positions around the
-    house. If you are in sight of the enemy, the enemy will chase you until you hide
-    within certain objects
+    6. The enemy wanders
+    to positions around the house. If you are in sight of the enemy, the enemy will
+    chase you until you hide within certain objects
 
-    7. After being hit with the taser or arrow, the enemy
-    will randomly spawn somewhere in the house after a set amount of time
+    7. After being hit with
+    the taser or arrow, the enemy will randomly spawn somewhere in the house after
+    a set amount of time
 
-    8.
-    New positions for the enemy to traverse to, and new spawn locations for the enemy
-    to respawn at will become active after the basement door is opened
+    8. New positions for the enemy to traverse to, and
+    new spawn locations for the enemy to respawn at will become active after the
+    basement door is opened
 
-    9. You
-    can take up to 2 hits from the enemy before dying'
+    9. You can take up to 2 hits from the enemy before
+    dying'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3598,7 +3599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00012207031, y: 169.4}
+  m_AnchoredPosition: {x: 0.00012207031, y: 171.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135728149
@@ -3621,17 +3622,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Basement Key: Opens the basement door
+  m_text: 'All items spawn randomly around the map and light up
+
+    Basement Key:
+    Opens the basement door
 
     Jail Key: Opens the jail door
 
-    Safe
-    Key: Opens the safe door
+    Safe Key: Opens
+    the safe door
 
     Escape Key: Opens the escape door
 
-    Bolt Cutters:
-    Cuts the chains on the escape door
+    Bolt Cutters: Cuts
+    the chains on the escape door
 
     Screwdriver: Removes screws on the escape
     door
@@ -3651,11 +3655,11 @@ MonoBehaviour:
     Has a 30 second cooldown after being shot
 
     Arrow: Can be loaded into the
-    crossbow if picked up when currently holding the crossbow
+    crossbow if picked up when currently holding the crossbow (lights up blue)
 
-    Crossbow: If aimed
-    at the enemy, is fired, and hits, respawns the enemy in 20 seconds. Can reload
-    arrow as many times as desired'
+    Crossbow:
+    If aimed at the enemy, is fired, and hits, respawns the enemy in 20 seconds.
+    Can reload arrow as many times as desired'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3682,8 +3686,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 15.5
+  m_fontSizeBase: 15.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3718,7 +3722,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -100.885254, y: 0, z: -89.262474, w: -319.32208}
+  m_margin: {x: -105.80348, y: 0, z: -86.70702, w: -325.32065}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

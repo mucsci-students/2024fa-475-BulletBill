@@ -74,7 +74,7 @@ public class Stim : MonoBehaviour
     {
         if (script.objectInHand != null && script.objectInHand.name == "Stim")
         {
-            GUI.Box(new Rect(1300, 10, 800, 50), "Click to inject stim for a speed boost!", stimStyle);
+            GUI.Box(new Rect(1250, 10, 800, 50), "Click to inject stim for a speed boost!", stimStyle);
         }
     }
 }
