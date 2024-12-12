@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4610732542379181713}
   m_Layer: 10
   m_Name: Radius
-  m_TagString: Untagged
+  m_TagString: Radius
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,8 +123,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.9914012, y: 1.9999999, z: 3.6672719}
-  m_Center: {x: -0.28217927, y: 1.2, z: 1.5836356}
+  m_Size: {x: 3.9914012, y: 1.9999999, z: 3.5121949}
+  m_Center: {x: -0.28217924, y: 1.2, z: 1.4730389}
 --- !u!114 &4610732542379181713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.6
+  m_Speed: 0.9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -303,10 +303,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
-  m_Height: 2.5705118
+  m_Radius: 1.0957317
+  m_Height: 2.228944
   m_Direction: 1
-  m_Center: {x: 0.007913907, y: 1.4666015, z: 0}
+  m_Center: {x: 0.007913931, y: 1.637386, z: -0.10426833}
 --- !u!136 &3845791235451182689
 CapsuleCollider:
   m_ObjectHideFlags: 0

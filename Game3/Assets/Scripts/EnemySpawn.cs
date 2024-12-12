@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+using UnityEngine.AI;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class EnemySpawn : MonoBehaviour
     public SeesPlayer seesScript;
     public GameObject clone;
     public Transform currentLocation;
+    public Transform stairs1;
+    public Transform stairs2;
+    //public Transform stairs2;
     public bool hitTaser = false;
     public bool hitArrow = false;
     private float timer = 0f;
@@ -48,6 +52,22 @@ public class EnemySpawn : MonoBehaviour
                 //Debug.Log(currentLocation);
                 clone.GetComponent<EnemyControl>().target = currentLocation;
             } 
+        }
+
+        if (Vector3.Distance(clone.transform.position, stairs1.transform.position) < .8f)
+        {
+            print ("lowering enemy speed");
+            clone.GetComponent<NavMeshAgent>().speed = .4f;
+        }
+        else if (Vector3.Distance(clone.transform.position, stairs2.transform.position) < .8f)
+        {
+            print ("lowering enemy speed");
+            clone.GetComponent<NavMeshAgent>().speed = .4f;
+        }
+        else
+        {
+            print ("back to normal speed");
+            clone.GetComponent<NavMeshAgent>().speed = .9f;
         }
         
         if (hitTaser)
