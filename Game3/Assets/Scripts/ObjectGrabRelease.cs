@@ -101,7 +101,7 @@ public class ObjectGrabRelease : MonoBehaviour
         buttonStyle.normal.background = blackTexture;
 
         // Adjust font size if needed
-        buttonStyle.fontSize = 75;
+        buttonStyle.fontSize = 35;
 
         // Adjust padding or other properties as needed
         buttonStyle.padding = new RectOffset(10, 10, 10, 10);
@@ -376,22 +376,22 @@ public class ObjectGrabRelease : MonoBehaviour
     {
         if (objectInHand != null)
         {
-            GUI.Box(new Rect(10, 10, 1250, 100), "Press Q to throw object", buttonStyle);
-            GUI.Box(new Rect(10, 110, 1250, 100), "Currently holding: " + objectInHand.name, buttonStyle);
+            GUI.Box(new Rect(10, 10, 700, 50), "Press Q to throw object", buttonStyle);
+            GUI.Box(new Rect(10, 60, 700, 50), "Currently holding: " + objectInHand.name, buttonStyle);
         }
         else
         {
-            GUI.Box(new Rect(10, 10, 1250, 100), "Press E to pickup an object", buttonStyle);
+            GUI.Box(new Rect(10, 10, 700, 50), "Press E to pickup an object", buttonStyle);
         }
         
         if (Vector3.Distance(player.transform.position, escapeDoor.transform.position) <= maxGrabDistance)
         {
-            GUI.Box(new Rect(10, 210, 1250, 100), "Items need to escape (In Order):", buttonStyle);
-            GUI.Box(new Rect(10, 310, 1250, 100), "1. Bolt Cutters", buttonStyle);
-            GUI.Box(new Rect(10, 410, 1250, 100), "2. Screwdriver", buttonStyle);
-            GUI.Box(new Rect(10, 510, 1250, 100), "3. Crowbar", buttonStyle);
-            GUI.Box(new Rect(10, 610, 1250, 100), "4. Electricity Turned On (Lever)", buttonStyle);
-            GUI.Box(new Rect(10, 710, 1250, 100), "5. Escape Key", buttonStyle);
+            GUI.Box(new Rect(10, 110, 700, 50), "Items need to escape (In Order):", buttonStyle);
+            GUI.Box(new Rect(10, 160, 700, 50), "1. Bolt Cutters", buttonStyle);
+            GUI.Box(new Rect(10, 210, 700, 50), "2. Screwdriver", buttonStyle);
+            GUI.Box(new Rect(10, 260, 700, 50), "3. Crowbar", buttonStyle);
+            GUI.Box(new Rect(10, 310, 700, 50), "4. Electricity Turned On (Lever)", buttonStyle);
+            GUI.Box(new Rect(10, 360, 700, 50), "5. Escape Key", buttonStyle);
 
             if (chainsOffBool)
             {
@@ -403,27 +403,27 @@ public class ObjectGrabRelease : MonoBehaviour
                         {
                             if (objectInHand == null || objectInHand.name != "EscapeKey")
                             {
-                                GUI.Box(new Rect(10, 810, 1400, 100), "Escape Key needed to escape", buttonStyle);
+                                GUI.Box(new Rect(10, 410, 900, 50), "Escape Key needed to escape", buttonStyle);
                             }
                             else if (objectInHand.name == "EscapeKey")
                             {
-                                GUI.Box(new Rect(10, 810, 1400, 100), "Press E to escape", buttonStyle);
+                                GUI.Box(new Rect(10, 410, 900, 50), "Press E to escape", buttonStyle);
                             }
                         }
                         else
                         {
-                            GUI.Box(new Rect(10, 810, 1400, 100), "Electricity needed to escape", buttonStyle);
+                            GUI.Box(new Rect(10, 410, 900, 50), "Electricity needed to escape", buttonStyle);
                         }
                     }
                     else
                     {
                         if (objectInHand == null || objectInHand.name != "Crowbar")
                         {
-                            GUI.Box(new Rect(10, 810, 1400, 100), "Crowbar needed to remove planks", buttonStyle);
+                            GUI.Box(new Rect(10, 410, 900, 50), "Crowbar needed to remove planks", buttonStyle);
                         }
                         else if (objectInHand.name == "Crowbar")
                         {
-                            GUI.Box(new Rect(10, 810, 1400, 100), "Press E to remove planks", buttonStyle);
+                            GUI.Box(new Rect(10, 410, 900, 50), "Press E to remove planks", buttonStyle);
                         }
                     }
                 }
@@ -431,11 +431,11 @@ public class ObjectGrabRelease : MonoBehaviour
                 {
                     if (objectInHand == null || objectInHand.name != "Screwdriver")
                     {
-                        GUI.Box(new Rect(10, 810, 1400, 100), "Screwdriver needed to remove screws", buttonStyle);
+                        GUI.Box(new Rect(10, 410, 900, 50), "Screwdriver needed to remove screws", buttonStyle);
                     }
                     else if (objectInHand.name == "Screwdriver")
                     {   
-                        GUI.Box(new Rect(10, 810, 1400, 100), "Press E to remove screws", buttonStyle);
+                        GUI.Box(new Rect(10, 410, 900, 50), "Press E to remove screws", buttonStyle);
                     }
                 }
             }
@@ -443,11 +443,11 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 if (objectInHand == null || objectInHand.name != "BoltCutters")
                 {
-                    GUI.Box(new Rect(10, 810, 1400, 100), "Bolt Cutters needed to remove chains", buttonStyle);
+                    GUI.Box(new Rect(10, 410, 900, 50), "Bolt Cutters needed to remove chains", buttonStyle);
                 }
                 else if (objectInHand.name == "BoltCutters")
                 {   
-                    GUI.Box(new Rect(10, 810, 1400, 100), "Press E to remove chains", buttonStyle);
+                    GUI.Box(new Rect(10, 410, 900, 50), "Press E to remove chains", buttonStyle);
                 }
             }
         }
@@ -458,11 +458,11 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 if (objectInHand == null || objectInHand.name != "BasementKey")
                 {
-                    GUI.Box(new Rect(10, 210, 1250, 100), "Basement Key needed to unlock", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 700, 50), "Basement Key needed to unlock", buttonStyle);
                 }
                 else if (objectInHand.name == "BasementKey")
                 {
-                    GUI.Box(new Rect(10, 210, 1350, 100), "Press E to open the basement door", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 700, 50), "Press E to open the basement door", buttonStyle);
                 }
             }
         }
@@ -473,11 +473,11 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 if (objectInHand == null || objectInHand.name != "JailKey")
                 {
-                    GUI.Box(new Rect(10, 310, 1250, 100), "Jail Key needed to unlock", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 700, 50), "Jail Key needed to unlock", buttonStyle);
                 }
                 else if (objectInHand.name == "JailKey")
                 {
-                    GUI.Box(new Rect(10, 310, 1350, 100), "Press E to open the jail door", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 700, 50), "Press E to open the jail door", buttonStyle);
                 }
             }
         }
@@ -488,11 +488,11 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 if (objectInHand == null || objectInHand.name != "SafeKey")
                 {
-                    GUI.Box(new Rect(10, 410, 1250, 100), "Safe Key needed to unlock", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 700, 50), "Safe Key needed to unlock", buttonStyle);
                 }
                 else if (objectInHand.name == "SafeKey")
                 {
-                    GUI.Box(new Rect(10, 410, 1350, 100), "Press E to open the safe", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 800, 50), "Press E to open the safe", buttonStyle);
                 }
             }
         }
@@ -503,18 +503,18 @@ public class ObjectGrabRelease : MonoBehaviour
             {
                 if (objectInHand == null || objectInHand.name != "Lever")
                 {
-                    GUI.Box(new Rect(10, 410, 1250, 100), "Lever Needed to turn on", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 700, 50), "Lever Needed to turn on", buttonStyle);
                 }
                 else if (objectInHand.name == "Lever")
                 {
-                    GUI.Box(new Rect(10, 410, 1350, 100), "Click to turn on the electricity", buttonStyle);
+                    GUI.Box(new Rect(10, 110, 800, 50), "Click to turn on the electricity", buttonStyle);
                 }
             }
         } 
 
         if (Vector3.Distance(player.transform.position, closestCamera.transform.position) <= maxGrabDistance && closestCamera != null)
         {
-            GUI.Box(new Rect(10, 810, 1250, 100), "Press R to hide", buttonStyle);
+            GUI.Box(new Rect(10, 600, 700, 50), "Press R to hide", buttonStyle);
         }
     }
 }

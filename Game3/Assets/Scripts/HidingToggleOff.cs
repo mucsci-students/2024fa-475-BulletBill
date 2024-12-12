@@ -30,7 +30,7 @@ public class HidingToggleOff : MonoBehaviour
         buttonStyle.normal.background = blackTexture;
 
         // Adjust font size if needed
-        buttonStyle.fontSize = 75;
+        buttonStyle.fontSize = 35;
 
         // Adjust padding or other properties as needed
         buttonStyle.padding = new RectOffset(10, 10, 10, 10);
@@ -62,7 +62,7 @@ public class HidingToggleOff : MonoBehaviour
     {
         if(hidingCamera.enabled == true)
         {
-            GUI.Box(new Rect(10, 10, 1250, 100), "Press R to stop hiding", buttonStyle);
+            GUI.Box(new Rect(10, 10, 700, 50), "Press R to stop hiding", buttonStyle);
         }
     }
 }
