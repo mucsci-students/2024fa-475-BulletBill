@@ -10,7 +10,6 @@ public class MainMenuUI : MonoBehaviour
     public GameObject TutorialMenuUI1;
     public GameObject TutorialMenuUI2;
     public GameObject TutorialMenuUI3;
-    public GameObject MusicManager;
 
     public void StartGame()
     {
@@ -23,10 +22,6 @@ public class MainMenuUI : MonoBehaviour
         PauseGame.isWin = false;
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(MusicManager);
-    }
     public void Start()
     {
         MainMenu.SetActive(true);
