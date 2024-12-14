@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FirstPersonCamera : MonoBehaviour
 {
     public Transform player;
-    public float mouseSensitivity = 2f;
+    public Slider slider;
+    public float mouseSensitivity = 1f;
     private float cameraVerticalRotation = 0f;
     //public PauseGame pauseScript;
     //private bool lockedCursor = true;
@@ -14,6 +16,7 @@ public class FirstPersonCamera : MonoBehaviour
         // Lock and hide the cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        slider.value = mouseSensitivity;
 
     }
 
@@ -33,22 +36,22 @@ public class FirstPersonCamera : MonoBehaviour
             // Rotate the player object and the camera around its Y axis
             player.Rotate(Vector3.up * inputX);
         }
-        if (PauseGame.isGameOver)
-        {
-            // Rotate the camera around its local X axis
-            cameraVerticalRotation = 0;
-            transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
-            mouseSensitivity = 0;
-        }
-        else
-        {
-            mouseSensitivity = 1;
-        }
+        // if (PauseGame.isGameOver)
+        // {
+        //     // Rotate the camera around its local X axis
+        //     cameraVerticalRotation = 0;
+        //     transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
+        //     mouseSensitivity = 0;
+        // }
+        // else
+        // {
+        //     mouseSensitivity = 1;
+        // }
 
     }
 
-    void FixedUpdate()
+    public void AdjustMouseSpeed(float newSpeed)
     {
-
+        mouseSensitivity = newSpeed;
     }
 }
